@@ -1,0 +1,61 @@
+# lamill.toml — per-site config consumed by lamill (portfolio/ops) and rankmill (content/audits).
+# [content] = stable identity, authored by hand. [todo] = volatile work state.
+# rankmill output lives in sites/<domain>/rankmill-output/, not here.
+
+schema = "lamill-toml-v1"
+
+[deploy]
+platform = "cf-workers"
+production_branch = "main"
+custom_domains = [
+    "lamill.pics",
+]
+
+[index]
+indexnow_key = "347d005f7a7c1a7f79f6da087c20346d"
+indexnow_enabled = true
+
+[stack]
+framework = "astro"
+
+# Tracked todos for lamill.pics. status: "done" | "open".
+[[todo]]
+status = "open"
+priority = "high"
+task = "Fill in [content] block: tone"
+
+[[todo]]
+status = "open"
+priority = "medium"
+task = "Check SEO: GSC indexation + coverage (revisit ~2026-10-20)"
+
+[[todo]]
+status = "open"
+priority = "medium"
+task = "Verify GA4 is receiving data (check Realtime after first traffic)"
+
+[[todo]]
+status = "open"
+priority = "low"
+task = "Confirm GSC verification + sitemap submitted (re-run deploy if it timed out)"
+
+[content]
+# Declarative content identity for this site.
+# Authored by the human; consumed by rankmill to generate drafts and run audits.
+# Leave fields empty until you have a deliberate answer. Empty is better than wrong.
+site_type = "b2c"
+primary_keyword = "good morning images"
+secondary_keywords = [
+    "good morning images malayalam",
+    "good morning images whatsapp",
+    "good morning images hindi",
+    "happy birthday cake with name",
+    "birthday wishes with name",
+    "islamic dp",
+    "friends group dp",
+]
+icp = "A 45–65-year-old WhatsApp-native parent, often a mom or family-group admin, who forwards good morning images daily, sets the family or friends group icon, and sends birthday and festival wishes. She searches Google in English or her own language (\"good morning images malayalam,\" \"happy birthday cake with name,\" \"islamic dp\"), will never open Canva, and wants to pick → add a name → send in under 30 seconds. A secondary ICP is the diaspora community-group admin (association, church, temple or mosque WhatsApp groups) who needs correct bilingual greeting and announcement images every week."
+urgency_trigger = "Need to send or update a greeting/DP immediately for a morning message, birthday, festival or group announcement"
+penalty = "Missed chance to send a timely, personalized greeting or update a group icon — or spend much longer creating one; potential wrong-language rendering or awkward-looking image"
+tone = ""                 # e.g. "direct, technical, no fluff" or "warm, plainspoken"
+law = ""                  # statute or regulation if applicable, else empty
