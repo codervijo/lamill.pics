@@ -1,0 +1,23 @@
+---
+// Ported from genai/src/routes/render.$id.tsx — internal render surface used to
+// bake gallery artwork into real image files. Static (no hydration), noindex,
+// and excluded from the sitemap in astro.config.mjs.
+import Layout from '../../layouts/Layout.astro';
+import { Artwork } from '../../components/pics/experience';
+import { allPictures } from '../../lib/gallery-data';
+
+export function getStaticPaths() {
+  return allPictures.map((picture) => ({ params: { id: picture.id }, props: { picture } }));
+}
+
+const { picture } = Astro.props;
+---
+<Layout>
+  <Fragment slot="head">
+    <title>Render — LaMill Pics</title>
+    <meta name="robots" content="noindex" />
+  </Fragment>
+  <div class="render-stage">
+    <Artwork picture={picture} priority />
+  </div>
+</Layout>

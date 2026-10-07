@@ -1,0 +1,32 @@
+---
+// Ported from genai/src/routes/$.tsx (splat category route). One static page
+// per category; /good-morning-images has its own explicit route.
+import Layout from '../layouts/Layout.astro';
+import { CategoryPage } from '../components/pics/experience';
+import { categories } from '../lib/pics';
+
+export function getStaticPaths() {
+  return categories
+    .filter((category) => category.slug !== 'good-morning-images')
+    .map((category) => ({ params: { slug: category.slug }, props: { category } }));
+}
+
+const { category } = Astro.props;
+const site = "https://lamill.pics";
+const title = `${category.name} — LaMill Pics`;
+const description = category.intro;
+const canonical = `${site}/${category.slug}/`;
+---
+<Layout>
+  <Fragment slot="head">
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+  </Fragment>
+  <CategoryPage client:load category={category} />
+</Layout>
