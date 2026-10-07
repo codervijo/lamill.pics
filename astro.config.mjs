@@ -4,6 +4,27 @@ import { fileURLToPath } from 'node:url';
 import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
+import { fileURLToPath as toPath } from 'node:url';
+import sharp from 'sharp';
+import { galleryImageFiles, sitemapImages } from './src/lib/catalog.ts';
+
+// Image sitemap: each gallery/picture page lists its stable /images/... URLs.
+const pageImages = sitemapImages();
+
+// Writes a 1080×1080 JPEG next to every gallery WebP in dist/ (same stable
+// path, .jpg) — og:image for WhatsApp previews + the no-JS download file.
+const galleryJpegs = {
+  name: 'lamill-gallery-jpegs',
+  hooks: {
+    'astro:build:done': async ({ dir, logger }) => {
+      const out = toPath(dir);
+      for (const { webp, jpeg } of galleryImageFiles()) {
+        await sharp(out + webp.slice(1)).flatten({ background: '#ffffff' }).jpeg({ quality: 86, mozjpeg: true }).toFile(out + jpeg.slice(1));
+      }
+      logger.info(`✓ ${galleryImageFiles().length} gallery JPEGs written`);
+    },
+  },
+};
 
 export default defineConfig({
   site: 'https://lamill.pics',
@@ -16,8 +37,16 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [
     react(),
+    galleryJpegs,
     // /render/<id>/ is an internal artwork-baking surface (noindex).
-    sitemap({ filter: (page) => !page.includes('/render/') }),
+    // Query-string URLs (e.g. /?create=true) are never pages, so never listed.
+    sitemap({
+      filter: (page) => !page.includes('/render/') && !page.includes('?'),
+      serialize: (item) => {
+        const images = pageImages.get(new URL(item.url).pathname);
+        return images?.length ? { ...item, img: images.map((url) => ({ url })) } : item;
+      },
+    }),
   ],
   output: 'static',
   vite: {

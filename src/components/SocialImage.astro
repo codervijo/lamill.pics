@@ -1,0 +1,15 @@
+---
+// og:image + twitter:image for link previews (WhatsApp reads og:image).
+// `src` may be site-relative; it's made absolute against the canonical host.
+import { SITE } from '../lib/catalog';
+interface Props { src: string; alt: string; width?: number; height?: number }
+// Pass width/height only when known (gallery JPEGs are 1080×1080).
+const { src, alt, width, height } = Astro.props;
+const url = new URL(src, SITE).href;
+---
+<meta property="og:image" content={url} />
+{width && <meta property="og:image:width" content={String(width)} />}
+{height && <meta property="og:image:height" content={String(height)} />}
+<meta property="og:image:alt" content={alt} />
+<meta name="twitter:image" content={url} />
+<meta name="twitter:image:alt" content={alt} />

@@ -3,6 +3,8 @@
 // root head). Per-page SEO tags (title, description, canonical, OG, JSON-LD)
 // are passed in via the "head" slot so each page owns its own metadata.
 import '../styles/global.css';
+// GA4 — only injected when PUBLIC_GA_ID is set (Cloudflare build env var).
+const GA_ID = import.meta.env.PUBLIC_GA_ID;
 ---
 <!doctype html>
 <html lang="en">
@@ -15,6 +17,17 @@ import '../styles/global.css';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700;750&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+Malayalam:wght@400;500&family=Noto+Sans+Arabic:wght@400;500&display=swap" />
     <slot name="head" />
+    {GA_ID && (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+        <script is:inline define:vars={{ GA_ID }}>
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function () { dataLayer.push(arguments); };
+          gtag('js', new Date());
+          gtag('config', GA_ID);
+        </script>
+      </>
+    )}
   </head>
   <body>
     <slot />

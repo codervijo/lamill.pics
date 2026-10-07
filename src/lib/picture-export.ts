@@ -37,6 +37,19 @@ export async function exportPicture(picture: Picture): Promise<Blob> {
 }
 export async function downloadPicture(picture: Picture) {
  const blob = await exportPicture(picture); const url = URL.createObjectURL(blob);
- const link = document.createElement('a'); link.href = url; link.download = `lamill-pics-${picture.id}.png`; link.click();
+ const link = document.createElement('a'); link.href = url; link.download = `lamill-pics-${picture.slug ?? picture.id}.png`; link.click();
  setTimeout(() => URL.revokeObjectURL(url), 10000);
+}
+/** Web Share with the PNG attached; falls back to a wa.me text link. Returns a user-facing notice ('' if cancelled). */
+export async function sharePicture(picture: Picture, url?: string): Promise<{ notice: string; method: 'web_share' | 'whatsapp' | 'cancelled' }> {
+ try {
+  const blob = await exportPicture(picture); const file = new File([blob], `lamill-pics-${picture.slug ?? picture.id}.png`, { type: 'image/png' });
+  if (navigator.canShare?.({ files: [file] })) { await navigator.share({ files: [file], title: picture.title }); return { notice: 'Picture shared.', method: 'web_share' }; }
+  const text = encodeURIComponent(`${picture.title} — made with LaMill Pics${url ? ` ${url}` : ''}`);
+  window.open(`https://wa.me/?text=${text}`, '_blank', 'noopener');
+  return { notice: 'Opening WhatsApp. Download the picture to attach it.', method: 'whatsapp' };
+ } catch (error) {
+  if (error instanceof Error && error.name === 'AbortError') return { notice: '', method: 'cancelled' };
+  throw error;
+ }
 }

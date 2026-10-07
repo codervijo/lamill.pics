@@ -2,7 +2,11 @@
 // Ported from genai/src/routes/good-morning-images.tsx (explicit flagship category route).
 import Layout from '../layouts/Layout.astro';
 import { CategoryPage } from '../components/pics/experience';
+import SocialImage from '../components/SocialImage.astro';
+import { jpegPath } from '../lib/catalog';
 import { categories } from '../lib/pics';
+import { morningPictures } from '../lib/gallery-data';
+const lead = morningPictures[0]!;
 
 const site = "https://lamill.pics";
 const title = "Good Morning Images — LaMill Pics";
@@ -26,6 +30,7 @@ const jsonLd = JSON.stringify({
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary_large_image" />
+    <SocialImage src={jpegPath({ category: lead.category, slug: lead.slug! })} alt={lead.alt ?? lead.title} width={1080} height={1080} />
     <script type="application/ld+json" set:html={jsonLd} />
   </Fragment>
   <CategoryPage client:load category={categories[0]} />

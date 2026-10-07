@@ -2,6 +2,10 @@
 // src/pages/index.astro — ported from genai/src/routes/index.tsx
 import Layout from '../layouts/Layout.astro';
 import { Home } from '../components/pics/experience';
+import SocialImage from '../components/SocialImage.astro';
+import { jpegPath } from '../lib/catalog';
+import { pictures } from '../lib/pics';
+const lead = pictures[0]!;
 
 const site = "https://lamill.pics";
 const title = "Turn any thought into a picture — LaMill Pics";
@@ -29,6 +33,7 @@ const canonical = `${site}/`;
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <SocialImage src={jpegPath({ category: lead.category, slug: lead.slug! })} alt={lead.alt ?? lead.title} width={1080} height={1080} />
 
     <!-- JSON-LD structured data: Organization + WebSite -->
     <script type="application/ld+json">

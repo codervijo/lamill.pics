@@ -1,0 +1,266 @@
+{
+  "categories": [
+    {
+      "slug": "good-morning-images",
+      "name": "Good Morning Images",
+      "short": "Good Morning",
+      "intro": "A little sunshine for someone’s day. Beautiful morning wishes to download, share, or make your own.",
+      "card": "Sunrise, flowers and tea to start someone’s day",
+      "target": 30,
+      "art": "flowers"
+    },
+    {
+      "slug": "dp",
+      "name": "WhatsApp DP",
+      "short": "WhatsApp DP",
+      "intro": "A little picture. A lot of personality. Find your next profile picture.",
+      "card": "Profile pictures for every mood and moment",
+      "target": 30,
+      "art": "couple"
+    },
+    {
+      "slug": "dp/friends",
+      "name": "Friends Group DP",
+      "short": "Friends",
+      "intro": "For your favourite people and your never-quiet group chat.",
+      "card": "Group icons for the chat that never sleeps",
+      "target": 30,
+      "art": "friends"
+    },
+    {
+      "slug": "dp/couple",
+      "name": "Couple DP",
+      "short": "Love & Couples",
+      "intro": "Little pictures for a love that feels like home.",
+      "card": "Little pictures for the two of you",
+      "target": 30,
+      "art": "couple"
+    },
+    {
+      "slug": "dp/islamic",
+      "name": "Islamic DP",
+      "short": "Islamic",
+      "intro": "Peaceful images and heartfelt wishes for moments of faith.",
+      "card": "Peaceful pictures for moments of faith",
+      "target": 30,
+      "art": "islamic"
+    },
+    {
+      "slug": "christian/good-morning",
+      "name": "Christian Images",
+      "short": "Christian",
+      "intro": "Start the day with gratitude, hope and a little blessing.",
+      "card": "Morning blessings and verses to share",
+      "target": 30,
+      "art": "flowers"
+    },
+    {
+      "slug": "birthday-wishes",
+      "name": "Birthday Wishes",
+      "short": "Birthday",
+      "intro": "Make their special day a little more wonderful.",
+      "card": "Wishes for their special day — add their name",
+      "target": 30,
+      "art": "birthday"
+    },
+    {
+      "slug": "good-night-images",
+      "name": "Good Night Images",
+      "short": "Good Night",
+      "intro": "Send a little peace before the day comes to an end.",
+      "card": "A calm goodnight before the day ends",
+      "target": 30,
+      "art": "night"
+    },
+    {
+      "slug": "dp/attitude",
+      "name": "Attitude DP",
+      "short": "Attitude",
+      "intro": "Be yourself. Let your picture do the talking.",
+      "card": "Bold DPs that say it for you",
+      "target": 30,
+      "art": "friends"
+    },
+    {
+      "slug": "motivational-images",
+      "name": "Motivational Images",
+      "short": "Quotes",
+      "intro": "A few words can make a world of difference.",
+      "card": "A few words to keep someone going",
+      "target": 30,
+      "art": "night"
+    }
+  ],
+  "pictures": [
+    {
+      "id": "morning-bloom",
+      "slug": "good-morning-flowers-fresh-start",
+      "category": "good-morning-images",
+      "language": "en",
+      "status": "live",
+      "art": "flowers",
+      "title": "A fresh start, a beautiful day",
+      "text": "Good morning",
+      "subtitle": "A fresh start. A beautiful day.",
+      "tone": "dark"
+    },
+    {
+      "id": "morning-sunrise",
+      "slug": "good-morning-sunrise-hello-sunshine",
+      "category": "good-morning-images",
+      "language": "en",
+      "status": "live",
+      "art": "sunrise",
+      "title": "Golden sunrise good morning wish",
+      "text": "Hello, sunshine.",
+      "subtitle": "Today is full of possibilities.",
+      "tone": "dark"
+    },
+    {
+      "id": "morning-tea",
+      "slug": "good-morning-tea-flowers-new-day",
+      "category": "good-morning-images",
+      "language": "en",
+      "status": "live",
+      "art": "tea",
+      "title": "Flowers and tea good morning image",
+      "text": "A little joy.\nA brand new day.",
+      "tone": "dark"
+    },
+    {
+      "id": "malayalam-morning",
+      "slug": "suprabatham-malayalam-good-morning-flowers",
+      "category": "good-morning-images",
+      "language": "ml",
+      "status": "live",
+      "art": "flowers",
+      "title": "Malayalam good morning flowers",
+      "text": "സുപ്രഭാതം",
+      "subtitle": "നല്ലൊരു ദിവസം ആശംസിക്കുന്നു",
+      "tone": "dark"
+    },
+    {
+      "id": "morning-blessing",
+      "slug": "christian-good-morning-psalm-118-24",
+      "category": "christian/good-morning",
+      "also_in": [
+        "good-morning-images"
+      ],
+      "language": "en",
+      "status": "live",
+      "art": "sunrise",
+      "title": "Christian morning blessing Psalm 118:24",
+      "text": "This is the day\nthe Lord has made.",
+      "subtitle": "Psalm 118:24",
+      "tone": "dark"
+    },
+    {
+      "id": "morning-kindness",
+      "slug": "good-morning-kindness-flowers",
+      "category": "good-morning-images",
+      "language": "en",
+      "status": "live",
+      "art": "flowers",
+      "title": "A morning filled with kindness",
+      "text": "Start with kindness.",
+      "subtitle": "Good morning, beautiful soul.",
+      "tone": "dark"
+    },
+    {
+      "id": "morning-amma",
+      "slug": "suprabatham-amma-malayalam-good-morning",
+      "category": "good-morning-images",
+      "language": "ml",
+      "status": "live",
+      "art": "flowers",
+      "title": "Good morning Amma in Malayalam",
+      "text": "സുപ്രഭാതം അമ്മേ",
+      "subtitle": "സ്നേഹത്തോടെ, എന്നും",
+      "tone": "dark"
+    },
+    {
+      "id": "morning-hindi",
+      "slug": "suprabhat-hindi-good-morning-tea",
+      "category": "good-morning-images",
+      "language": "hi",
+      "status": "live",
+      "art": "tea",
+      "title": "Hindi morning wish with flowers",
+      "text": "सुप्रभात",
+      "subtitle": "आपका दिन शुभ हो",
+      "tone": "dark"
+    },
+    {
+      "id": "our-kind",
+      "slug": "friends-group-dp-our-kind-of-crazy",
+      "category": "dp/friends",
+      "language": "en",
+      "status": "live",
+      "art": "friends",
+      "title": "Friends that feel like family",
+      "text": "Our kind of crazy.",
+      "subtitle": "Our kind of family.",
+      "tone": "light",
+      "placement": "bottom"
+    },
+    {
+      "id": "birthday-love",
+      "slug": "happy-birthday-wishes-flowers",
+      "category": "birthday-wishes",
+      "language": "en",
+      "status": "live",
+      "art": "birthday",
+      "title": "Birthday wishes with love",
+      "text": "Happy Birthday!",
+      "subtitle": "Here’s to a little more magic.",
+      "tone": "dark"
+    },
+    {
+      "id": "peace",
+      "slug": "islamic-dp-peace-begins-with-faith",
+      "category": "dp/islamic",
+      "language": "en",
+      "status": "live",
+      "art": "islamic",
+      "title": "A peaceful Islamic greeting",
+      "text": "Peace begins\nwith faith.",
+      "subtitle": "Alhamdulillah, always.",
+      "tone": "dark"
+    },
+    {
+      "id": "love-home",
+      "slug": "couple-dp-you-me-always",
+      "category": "dp/couple",
+      "language": "en",
+      "status": "live",
+      "art": "couple",
+      "title": "You feel like home",
+      "text": "You. Me. Always.",
+      "tone": "light",
+      "placement": "bottom"
+    },
+    {
+      "id": "night-dream",
+      "slug": "good-night-sweet-dreams-moon",
+      "category": "good-night-images",
+      "language": "en",
+      "status": "live",
+      "art": "night",
+      "title": "Good night and sweet dreams",
+      "text": "Good night",
+      "subtitle": "Let tomorrow take care of itself.",
+      "tone": "light"
+    },
+    {
+      "id": "small-steps",
+      "slug": "motivational-quote-small-steps",
+      "category": "motivational-images",
+      "language": "en",
+      "status": "live",
+      "art": "night",
+      "title": "Keep going motivational quote",
+      "text": "Small steps.\nBeautiful beginnings.",
+      "tone": "light"
+    }
+  ]
+}

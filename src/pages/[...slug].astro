@@ -1,21 +1,79 @@
 ---
 // Ported from genai/src/routes/$.tsx (splat category route). One static page
-// per category; /good-morning-images has its own explicit route.
+// per category (/good-morning-images has its own explicit route) plus one
+// picture page per live gallery image at /<category>/<image-slug>/.
 import Layout from '../layouts/Layout.astro';
-import { CategoryPage } from '../components/pics/experience';
-import { categories } from '../lib/pics';
+import SocialImage from '../components/SocialImage.astro';
+import { CategoryPage, PicturePage } from '../components/pics/experience';
+import { categories, catalog, type Category, type Picture } from '../lib/pics';
+import { galleryFor } from '../lib/gallery-data';
+import { assertNoPathCollisions, catalogPictures, jpegPath, languagePages, languagePath, relatedPictures, LANGUAGES, SITE, type Language } from '../lib/catalog';
 
 export function getStaticPaths() {
-  return categories
+  assertNoPathCollisions();
+  const categoryPages = categories
     .filter((category) => category.slug !== 'good-morning-images')
-    .map((category) => ({ params: { slug: category.slug }, props: { category } }));
+    .map((category) => ({ params: { slug: category.slug }, props: { kind: 'category' as const, category } }));
+  const picturePages = catalogPictures.map((entry) => {
+    const picture = catalog.find((p) => p.id === entry.id)!;
+    const category = categories.find((c) => c.slug === entry.category)!;
+    const related = relatedPictures(entry).map((r) => catalog.find((p) => p.id === r.id)!);
+    return { params: { slug: `${entry.category}/${entry.slug}` }, props: { kind: 'picture' as const, category, picture, related } };
+  });
+  const languagePageList = categories.flatMap((category) => languagePages(category.slug).map((language) => ({
+    params: { slug: `${category.slug}/${LANGUAGES[language].slug}` }, props: { kind: 'language' as const, category, language },
+  })));
+  return [...categoryPages, ...languagePageList, ...picturePages];
 }
 
-const { category } = Astro.props;
-const site = "https://lamill.pics";
-const title = `${category.name} — LaMill Pics`;
-const description = category.intro;
-const canonical = `${site}/${category.slug}/`;
+type Props =
+  | { kind: 'category'; category: Category }
+  | { kind: 'language'; category: Category; language: Language }
+  | { kind: 'picture'; category: Category; picture: Picture; related: Picture[] };
+const props = Astro.props as Props;
+const { category } = props;
+const lead = props.kind === 'picture' ? props.picture
+  : galleryFor(category.slug).find((p) => props.kind !== 'language' || p.language === props.language);
+const canonical = props.kind === 'picture' ? `${SITE}/${category.slug}/${props.picture.slug}/`
+  : props.kind === 'language' ? SITE + languagePath(category.slug, props.language)
+  : `${SITE}/${category.slug}/`;
+const title = props.kind === 'picture' ? `${props.picture.title} — ${category.name} — LaMill Pics`
+  : props.kind === 'language' ? `${category.name} in ${LANGUAGES[props.language].name} — LaMill Pics`
+  : `${category.name} — LaMill Pics`;
+const description = props.kind === 'picture'
+  ? `${props.picture.caption ?? props.picture.title}. Free to download and share on WhatsApp — add a name or message in one tap.`
+  : category.intro;
+const ogImage = lead?.slug ? jpegPath({ category: lead.category, slug: lead.slug }) : category.image;
+const ogAlt = lead?.alt ?? category.name;
+
+const jsonLd = props.kind === 'picture' ? JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ImageObject',
+      '@id': `${canonical}#image`,
+      contentUrl: new URL(props.picture.file!, SITE).href,
+      url: canonical,
+      name: props.picture.title,
+      caption: props.picture.caption ?? props.picture.title,
+      description: props.picture.alt,
+      width: 1080,
+      height: 1080,
+      encodingFormat: 'image/webp',
+      inLanguage: props.picture.language,
+      representativeOfPage: true,
+      creditText: 'LaMill Pics',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+        { '@type': 'ListItem', position: 2, name: category.name, item: `${SITE}/${category.slug}/` },
+        { '@type': 'ListItem', position: 3, name: props.picture.title, item: canonical },
+      ],
+    },
+  ],
+}) : null;
 ---
 <Layout>
   <Fragment slot="head">
@@ -27,6 +85,10 @@ const canonical = `${site}/${category.slug}/`;
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary_large_image" />
+    <SocialImage src={ogImage} alt={ogAlt} width={lead?.slug ? 1080 : undefined} height={lead?.slug ? 1080 : undefined} />
+    {jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
   </Fragment>
-  <CategoryPage client:load category={category} />
+  {props.kind === 'picture'
+    ? <PicturePage client:load picture={props.picture} category={category} related={props.related} url={canonical} jpeg={jpegPath({ category: category.slug, slug: props.picture.slug! })} />
+    : <CategoryPage client:load category={category} language={props.kind === 'language' ? props.language : undefined} />}
 </Layout>

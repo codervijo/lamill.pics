@@ -33,6 +33,8 @@ per-stack work to the central builder at `~/work/projects/builder/`.
 ## Project structure
 
 - `src/` — application source
+- `src/data/gallery.json` — the gallery catalog (categories + live pictures); drives image paths, picture pages, sitemap, filters. `src/data/gallery-placeholders.json` holds planned slots (never rendered).
+- `public/images/<category>/<slug>.webp` — gallery images at stable, hash-free URLs (a `.jpg` twin is generated into `dist/` at build)
 - `public/` — static assets copied to `dist/` at build (favicons, OG images, `_headers`)
 - `docs/` — PRD, Prompts log
 - `Makefile` — thin forwarder to `../Makefile`

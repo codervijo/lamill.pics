@@ -1,6 +1,15 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Astro's hashed build output (site JS/CSS/art) — content-addressed, safe to pin.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Gallery images live at stable, hash-free URLs (Google Images indexing), so the
+# same URL can get new bytes — cache for a day, revalidate after.
+/images/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 

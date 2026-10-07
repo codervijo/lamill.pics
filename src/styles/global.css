@@ -268,7 +268,7 @@ textarea::placeholder { color:var(--muted-foreground); }
 .personalize-form { border:2px solid var(--primary); background:color-mix(in srgb, var(--primary) 6%, transparent); }
 .refine-form textarea { width:100%; resize:none; border:none; outline:0; background:transparent; font-size:13px; }
 .editor-actions { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
-.editor-actions button { height:43px; }
+.editor-actions button, .editor-actions a { height:43px; }
 .profile-previews { display:flex; gap:14px; align-items:center; border-block:1px solid var(--border); padding-block:16px; }
 .profile-thumb { width:68px; height:68px; flex-shrink:0; border-radius:50%; overflow:hidden; }
 .crop-square { border-radius:4px; }
@@ -386,3 +386,9 @@ textarea::placeholder { color:var(--muted-foreground); }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; } }
 .render-stage { width:540px; height:540px; }
 .render-stage .artwork { width:100%; height:100%; }
+/* v1.C picture pages — reuse editor layout; only the page frame is new. */
+.picture-title { font-size:35px; line-height:1.3; margin:18px 0 22px; }
+.picture-figure { margin:0; }
+.picture-figcaption { margin-top:10px; color:var(--muted-foreground); font-size:13px; text-align:center; }
+.picture-page .related-section .picture-grid { margin-top:18px; }
+@media(max-width:640px) { .picture-title { font-size:26px; } }

@@ -64,3 +64,12 @@ https://search.google.com/search-console directly.
 - **Action:** project scaffolded via `portfolio new bootstrap`; first deploy pending. After deploy: verify in GSC as `sc-domain:lamill.pics` and submit the sitemap.
 - **Result:** TBD — review 2026-11-03
 - **Learning:** TBD
+
+## 2026-10-06 — Stable image URLs + per-image landing pages get gallery images indexed in Google Images
+- **Status:** active
+- **Hypothesis:** Hashed `/_astro/*.webp` URLs changed every rebuild, so Google Images never kept an image. With stable `/images/<category>/<slug>.webp` URLs, one picture page per image (ImageObject + BreadcrumbList schema), and an image sitemap, the images and picture pages get indexed and start drawing Google Images impressions.
+- **KPI:** GSC indexed-page count (target: the 14 picture pages); GSC impressions with search type = Image; CHECK_147 indexed ratio
+- **Baseline:** 0/10 top URLs indexed (CHECK_147, 2026-10-06); 0 impressions
+- **Action:** v1.B–v1.E (PRD): stable image paths, 14 picture pages, JPEG og:image, `<image:image>` sitemap entries, crawlable language-filter links, analytics events.
+- **Result:** TBD — review 2026-11-03
+- **Learning:** TBD
