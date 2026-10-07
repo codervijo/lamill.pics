@@ -90,7 +90,7 @@ docker exec -w /usr/src/app <name> make test proj=lamill.pics
   (avoids the bun-detection trap kwizicle.com hit). Idempotent; safe to re-run.
 - **Vite version:** must be ≥ 6.0.0 — Wrangler's Vite integration rejects Vite 5.
 - **Env vars:** set `VITE_*` vars (e.g. `VITE_GA_ID`) in the Cloudflare Workers project's environment-variable settings — they're inlined at build time.
-- **Live URL:** https://lamill.pics/  *(update once first deploy succeeds)*
+- **Live URL:** https://lamill.pics/  *(live; Cloudflare Git integration deploys `codervijo/lamill.pics` main on push, ~60s)*
 - **Canonical host:** the **apex** (`https://lamill.pics/`) is the ONLY canonical host fleet-wide — `www` and `http` must 308→apex, and there is no `www`-canonical option. Set Astro's `site: "https://lamill.pics"` (apex, never `www`) so every `<link rel="canonical">` and the generated sitemap `<loc>` URLs use the apex. Enforced by CHECK_150 (redirect) + CHECK_158 (canonical tags) + CHECK_159 (sitemap) + CHECK_160 (GSC-registered sitemap).
 - **Legacy:** if a `vercel.json` or `.vercelignore` is present from a Lovable export, it's inert on Cloudflare and safe to delete.
 
@@ -104,7 +104,7 @@ Programmatic, data-driven landing pages built from one template: intent × occas
 
 - [ ] Verify in **Google Search Console** at https://search.google.com/search-console — add as `sc-domain:lamill.pics` property; verify via DNS TXT record. Until this is done, no SEO traffic data is observable for this site (and the workspace-wide `30 commercial sites with traffic` goal can't credit it).
 - [ ] Submit the sitemap (`https://lamill.pics/sitemap-index.xml` — the apex host; `@astrojs/sitemap` emits `-index`, not `/sitemap.xml`) inside GSC. *(The deploy pipeline auto-submits the robots.txt-declared sitemap; this is the manual fallback.)*
-- [ ] Update the **Live URL** above with the actual deploy URL.
+- [x] Update the **Live URL** above with the actual deploy URL.
 - [ ] Run `make run ARGS="cleanup"` from `sites/portfolio/` so `data/portfolio.json` reflects the new project's state (and `project status lamill.pics` resolves cleanly).
 
 ## How to run
@@ -169,8 +169,10 @@ in `sites/portfolio/AI_AGENTS.md`):
 - **`vN.X`** — phase letter within a tier (A / B / C / …). Internal slicing of
   build work; signals "order/scope can shift." Each phase still ships
   independently.
-- **`vN.X.Y`** — numeric sub-phase for follow-up work that lands AFTER `vN.X`
-  shipped (e.g. polish, bug fixes, scope cuts).
+- **`vN.A` is always the planning / decisions-lock phase.** Build work starts
+  at `.B`.
+- **Two levels only — never `vN.X.Y`.** Follow-up work inside a tier pushes
+  later phase letters down to make room.
 
 Two-layer notation separates **external version** (what consumers see) from
 **internal phasing** (how the team slices work). Letters signal *un-promised* —
@@ -179,7 +181,7 @@ nobody mistakes `v1.B` for a SemVer minor release.
 **Always use this numbering when planning or shipping work on this project.**
 Specifically:
 
-- Every entry in `docs/prd.md`'s phases table uses `vN.X` (or `vN.X.Y`).
+- Every entry in `docs/prd.md`'s phases table uses `vN.X`.
 - Every commit message that ships a phase mentions its version (e.g.
   `v1.B — auth flow`).
 - Every entry in `docs/Prompts.md` references the version of the work it

@@ -22,3 +22,13 @@ to surface "last AI prompt" per project. Keep entries append-only.
 > pages with ImageObject + BreadcrumbList, JPEG twins for og:image/download,
 > image sitemap, crawlable language filter links, per-category card text,
 > placeholder slots (data-only), 8 tracked events via GA4 (`PUBLIC_GA_ID`).
+
+## 2026-10-06 — v1.D noindex art-less categories; repo rename; v1.F favicon + robots; first push
+
+> `/dp/attitude/` (no art) → `noindex, follow` + out of sitemap, data-driven.
+> GitHub repo renamed `lamill` → `lamill.pics` (operator, in the dashboard);
+> origin updated, CHECK_040 passing. v1.F: brand sparkle favicon (CHECK_060),
+> robots meta with `max-image-preview:large` (CHECK_075), literal og:image in
+> index.astro (CHECK_076). Pushed `a7e7d45`; live checks passed.
+> Open: `PUBLIC_GA_ID`, review draft card text, 286 placeholder slots, GSC
+> review 2026-11-03.

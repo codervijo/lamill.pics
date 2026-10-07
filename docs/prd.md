@@ -1,8 +1,8 @@
 ---
 project: lamill.pics
 prd_version: 1
-project_version: v1.A
-status: planned
+project_version: v1.F
+status: live
 owner: Vijo
 last_updated: 2026-10-06
 ---
@@ -52,11 +52,11 @@ Two-level versioning convention (canonical: `sites/portfolio/AI_AGENTS.md`):
 |---|---|---|---|
 | **v0.A** | scaffolded | `portfolio new bootstrap` ran; standard files written; git initialized | ✅ |
 | **v1.A** | planning / decisions-lock | audit findings placed into v1.B–v1.E; decisions logged in §6 (2026-10-06) | ✅ |
-| **v1.B** | stable image URLs + image sitemap | gallery WebPs served from `/images/<category>/<slug>.webp` (hash-free, data-driven; Astro hashing kept for site assets); `<image:image>` entries in the sitemap; `?create=true` never listed; robots.txt → sitemap | built 2026-10-06 — awaiting operator validation |
-| **v1.C** | picture pages + social previews | `/<category>/<image-slug>/` per image: H1, large WebP, caption, alt, "Add a name or message", Download (1080×1080 PNG), Share (Web Share with file → wa.me fallback), Make your own, related pictures; ImageObject + BreadcrumbList schema; gallery tiles link to the page; site-wide `og:image` / `twitter:image` (lead image on category pages, the picture itself on picture pages) | built 2026-10-06 — awaiting operator validation |
-| **v1.D** | gallery depth | data layer supports 30–60 images per category; placeholder entries flagged in data and not rendered; crawlable language filters; per-category card description in data, replacing "Find your little favourite" | built 2026-10-06 — awaiting operator validation |
-| **v1.E** | analytics events | `generate`, `chip_tap`, `image_open`, `add_name`, `download`, `share`, `filter`, `make_own_cta`, each with `category` + `language`; GA4 via `PUBLIC_GA_ID`; console log in dev | built 2026-10-06 — awaiting operator validation |
-| **v1.F** | conformance: favicon + meta robots | brand favicon (sparkle mark, brand green) replacing the Lovable default `favicon.ico` + scaffold `favicon.svg` (CHECK_060); `<meta name="robots">` on every indexable page with `max-image-preview:large`, and literal `og:image` in `index.astro` (CHECK_075/076 parse page source) | built 2026-10-06 — awaiting operator validation |
+| **v1.B** | stable image URLs + image sitemap | gallery WebPs served from `/images/<category>/<slug>.webp` (hash-free, data-driven; Astro hashing kept for site assets); `<image:image>` entries in the sitemap; `?create=true` never listed; robots.txt → sitemap | ✅ live 2026-10-06 (`a7e7d45`) — awaiting operator validation |
+| **v1.C** | picture pages + social previews | `/<category>/<image-slug>/` per image: H1, large WebP, caption, alt, "Add a name or message", Download (1080×1080 PNG), Share (Web Share with file → wa.me fallback), Make your own, related pictures; ImageObject + BreadcrumbList schema; gallery tiles link to the page; site-wide `og:image` / `twitter:image` (lead image on category pages, the picture itself on picture pages) | ✅ live 2026-10-06 (`a7e7d45`) — awaiting operator validation |
+| **v1.D** | gallery depth | data layer supports 30–60 images per category; placeholder entries flagged in data and not rendered; crawlable language filters; per-category card description in data, replacing "Find your little favourite" | ✅ live 2026-10-06 (`a7e7d45`) — awaiting operator validation |
+| **v1.E** | analytics events | `generate`, `chip_tap`, `image_open`, `add_name`, `download`, `share`, `filter`, `make_own_cta`, each with `category` + `language`; GA4 via `PUBLIC_GA_ID`; console log in dev | ✅ live 2026-10-06 (`a7e7d45`) — awaiting operator validation |
+| **v1.F** | conformance: favicon + meta robots | brand favicon (sparkle mark, brand green) replacing the Lovable default `favicon.ico` + scaffold `favicon.svg` (CHECK_060); `<meta name="robots">` on every indexable page with `max-image-preview:large`, and literal `og:image` in `index.astro` (CHECK_075/076 parse page source) | ✅ live 2026-10-06 (`a7e7d45`) — awaiting operator validation |
 
 ## 6. Open questions
 
