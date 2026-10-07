@@ -29,6 +29,8 @@ export const categoryPath = (slug: string) => `/${slug}/`;
 // A category also shows its children's pictures (/dp/ hub ⊇ /dp/friends/ …).
 export const inCategory = (p: CatalogPicture, slug: string) => p.category === slug || p.category.startsWith(`${slug}/`) || !!p.also_in?.includes(slug);
 export const categoryPictures = (slug: string) => catalogPictures.filter(p => inCategory(p, slug));
+// A category with no live art (own or children) is thin: noindex + out of the sitemap until it has some.
+export const emptyCategoryPaths = () => new Set(catalogCategories.filter(c => categoryPictures(c.slug).length === 0).map(c => categoryPath(c.slug)));
 
 // Alt/caption default to data the operator already approved (title + the
 // picture's own words); set `alt` / `caption` in gallery.json to override.

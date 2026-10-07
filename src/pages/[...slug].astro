@@ -45,6 +45,8 @@ const description = props.kind === 'picture'
   : category.intro;
 const ogImage = lead?.slug ? jpegPath({ category: lead.category, slug: lead.slug }) : category.image;
 const ogAlt = lead?.alt ?? category.name;
+// No live art yet → thin page: keep it out of the index until it has some.
+const noindex = props.kind === 'category' && galleryFor(category.slug).length === 0;
 
 const jsonLd = props.kind === 'picture' ? JSON.stringify({
   '@context': 'https://schema.org',
@@ -80,6 +82,7 @@ const jsonLd = props.kind === 'picture' ? JSON.stringify({
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />

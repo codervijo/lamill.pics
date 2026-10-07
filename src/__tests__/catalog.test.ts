@@ -5,7 +5,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import data from '../data/gallery.json';
 import planned from '../data/gallery-placeholders.json';
-import { assertNoPathCollisions, catalogCategories, catalogPictures, imagePath, jpegPath, picturePath, sitemapImages, LANGUAGES } from '../lib/catalog';
+import { assertNoPathCollisions, categoryPath, categoryPictures, catalogCategories, catalogPictures, imagePath, jpegPath, picturePath, sitemapImages, LANGUAGES } from '../lib/catalog';
 import { galleryGaps } from '../lib/catalog-report';
 import { detectLanguage } from '../lib/track';
 
@@ -78,10 +78,18 @@ describe.skipIf(!existsSync(join(dist, 'index.html')))('built site', () => {
       expect(existsSync(join(dist, jpegPath(p)))).toBe(true);
     }
   });
+  it('categories without art are noindex and absent from the sitemap; the rest are indexable and listed', () => {
+    for (const c of catalogCategories) {
+      const html = readFileSync(join(dist, categoryPath(c.slug), 'index.html'), 'utf8');
+      const empty = categoryPictures(c.slug).length === 0;
+      expect(html.includes('name="robots" content="noindex'), c.slug).toBe(empty);
+      expect(sitemap.includes(`<loc>https://lamill.pics${categoryPath(c.slug)}</loc>`), c.slug).toBe(!empty);
+    }
+  });
   it('every page has og:image and every <img> has explicit width and height', () => {
     for (const f of htmlFiles(dist)) {
       const html = readFileSync(f, 'utf8');
-      if (!html.includes('name="robots" content="noindex"')) expect(html, f).toContain('property="og:image"');
+      if (!html.includes('name="robots" content="noindex')) expect(html, f).toContain('property="og:image"');
       for (const img of html.match(/<img\b[^>]*>/g) ?? []) {
         expect(img, f).toMatch(/\bwidth="\d+"/);
         expect(img, f).toMatch(/\bheight="\d+"/);
