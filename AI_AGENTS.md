@@ -197,6 +197,16 @@ the bootstrap (this scaffold); v1.A is the first real shipped capability.
 - Cloudflare deploy constraints: Vite ≥ 6, frozen-lockfile install, no `_redirects` SPA fallback (handled by `wrangler.jsonc`'s `not_found_handling` instead).
 - **Versioning**: two-level `vN` / `vN.X` — see Versioning section above and `sites/portfolio/AI_AGENTS.md` for the canonical statement.
 
+## Operator notes
+
+- **Faceless brand.** No founder names or personal details anywhere on the site.
+- **Image text is real Unicode** rendered over the artwork — never generated inside the image model.
+- **Every gallery image** is a real WebP/PNG file with a descriptive filename, alt text, caption, and an image-sitemap entry.
+- **All landing pages are pre-rendered/static.** No client-only rendering.
+- **Never require signup** to browse, personalize, download, or share.
+- **Track these events** (each with `category` and `language`): `generate`, `chip_tap`, `image_open`, `add_name`, `download`, `share`, `filter`, `make_own_cta`.
+- **No pages for keywords with KD > 20** without operator approval.
+
 ## Out of scope / don't touch
 
 - *(leave blank — fill in when something is)*
