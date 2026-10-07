@@ -56,6 +56,7 @@ Two-level versioning convention (canonical: `sites/portfolio/AI_AGENTS.md`):
 | **v1.C** | picture pages + social previews | `/<category>/<image-slug>/` per image: H1, large WebP, caption, alt, "Add a name or message", Download (1080×1080 PNG), Share (Web Share with file → wa.me fallback), Make your own, related pictures; ImageObject + BreadcrumbList schema; gallery tiles link to the page; site-wide `og:image` / `twitter:image` (lead image on category pages, the picture itself on picture pages) | built 2026-10-06 — awaiting operator validation |
 | **v1.D** | gallery depth | data layer supports 30–60 images per category; placeholder entries flagged in data and not rendered; crawlable language filters; per-category card description in data, replacing "Find your little favourite" | built 2026-10-06 — awaiting operator validation |
 | **v1.E** | analytics events | `generate`, `chip_tap`, `image_open`, `add_name`, `download`, `share`, `filter`, `make_own_cta`, each with `category` + `language`; GA4 via `PUBLIC_GA_ID`; console log in dev | built 2026-10-06 — awaiting operator validation |
+| **v1.F** | conformance: favicon + meta robots | brand favicon (sparkle mark, brand green) replacing the Lovable default `favicon.ico` + scaffold `favicon.svg` (CHECK_060); `<meta name="robots">` on every indexable page with `max-image-preview:large`, and literal `og:image` in `index.astro` (CHECK_075/076 parse page source) | built 2026-10-06 — awaiting operator validation |
 
 ## 6. Open questions
 

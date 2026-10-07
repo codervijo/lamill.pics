@@ -2,12 +2,14 @@
 // src/pages/index.astro — ported from genai/src/routes/index.tsx
 import Layout from '../layouts/Layout.astro';
 import { Home } from '../components/pics/experience';
-import SocialImage from '../components/SocialImage.astro';
 import { jpegPath } from '../lib/catalog';
 import { pictures } from '../lib/pics';
 const lead = pictures[0]!;
 
 const site = "https://lamill.pics";
+// Written inline (not via SocialImage) — portfolio CHECK_076 parses this file's source.
+const ogImage = new URL(jpegPath({ category: lead.category, slug: lead.slug! }), site).href;
+const ogAlt = lead.alt ?? lead.title;
 const title = "Turn any thought into a picture — LaMill Pics";
 const description = "Make and discover beautiful good morning wishes, WhatsApp DPs, birthday greetings and pictures in your language. Browse, personalize, download and share.";
 // Canonical MUST match the served URL incl. trailing slash (trailingSlash:
@@ -21,6 +23,7 @@ const canonical = `${site}/`;
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!-- Open Graph -->
@@ -28,12 +31,17 @@ const canonical = `${site}/`;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:image:height" content="1080" />
+    <meta property="og:image:alt" content={ogAlt} />
 
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <SocialImage src={jpegPath({ category: lead.category, slug: lead.slug! })} alt={lead.alt ?? lead.title} width={1080} height={1080} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogAlt} />
 
     <!-- JSON-LD structured data: Organization + WebSite -->
     <script type="application/ld+json">

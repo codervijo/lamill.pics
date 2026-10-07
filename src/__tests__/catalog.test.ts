@@ -86,6 +86,13 @@ describe.skipIf(!existsSync(join(dist, 'index.html')))('built site', () => {
       expect(sitemap.includes(`<loc>https://lamill.pics${categoryPath(c.slug)}</loc>`), c.slug).toBe(!empty);
     }
   });
+  it('every page has exactly one robots meta; indexable ones allow large image previews', () => {
+    for (const f of htmlFiles(dist)) {
+      const tags = readFileSync(f, 'utf8').match(/<meta name="robots"[^>]*>/g) ?? [];
+      expect(tags.length, f).toBe(1);
+      if (!tags[0]!.includes('noindex')) expect(tags[0], f).toContain('max-image-preview:large');
+    }
+  });
   it('every page has og:image and every <img> has explicit width and height', () => {
     for (const f of htmlFiles(dist)) {
       const html = readFileSync(f, 'utf8');
