@@ -12,8 +12,18 @@ export type CatalogPicture = {
  id: string; slug: string; category: string; also_in?: string[]; language: Language; status: Status;
  art: string; title: string; text: string; subtitle?: string; tone: 'light' | 'dark'; placement?: 'top' | 'bottom';
  alt?: string; caption?: string;
+ // Picture page copy (v1.G): query-led heading, its own meta description, and a paragraph about this picture.
+ h1: string; description: string; about: string;
 };
-export type CatalogCategory = { slug: string; name: string; short: string; intro: string; card: string; target: number; art: string };
+export type Faq = { q: string; a: string };
+export type CopySection = { heading: string; body: string[] };
+export type CatalogCategory = {
+ slug: string; name: string; short: string; intro: string; card: string; target: number; art: string;
+ // Page copy (v1.G). `query` is the operator-supplied target query (null = none validated yet);
+ // `h1` leads with it, `title`/`description` are written for the SERP, the rest is on-page prose.
+ query: string | null; h1: string; title: string; description: string; answer: string;
+ sections: CopySection[]; faq: Faq[]; generator: { heading: string; example: string }; related: string[];
+};
 
 export const catalogCategories = data.categories as CatalogCategory[];
 // Placeholders are data-only until art exists: never rendered, no picture page, not in the sitemap.
@@ -51,11 +61,27 @@ export const languagePages = (slug: string): Language[] =>
  categoryLanguages(slug).filter(l => categoryPictures(slug).filter(p => p.language === l).length >= MIN_LANGUAGE_PAGE);
 export const languagePath = (slug: string, l: Language) => `/${slug}/${LANGUAGES[l].slug}/`;
 
-/** Same category first, then the rest of the catalog; never the picture itself. */
+export const BRAND = 'LaMill Pics';
+export const pageTitle = (t: string) => `${t} — ${BRAND}`;
+export const categoryBySlug = (slug: string) => catalogCategories.find(c => c.slug === slug);
+/** Parent hub of a nested category (/dp/friends/ → /dp/), if that hub exists. */
+export const parentCategory = (slug: string) => slug.includes('/') ? categoryBySlug(slug.slice(0, slug.lastIndexOf('/'))) : undefined;
+/** Topical neighbours: the parent hub first, then the category's own `related` list. */
+export function relatedCategories(slug: string): CatalogCategory[] {
+ const parent = parentCategory(slug);
+ const slugs = [...(parent ? [parent.slug] : []), ...(categoryBySlug(slug)?.related ?? [])];
+ return [...new Set(slugs)].filter(s => s !== slug).map(s => categoryBySlug(s)!);
+}
+
+/** Same category first, then its cluster (/dp/*), then related categories, then the rest; never the picture itself. */
 export function relatedPictures(p: CatalogPicture, n = 6): CatalogPicture[] {
  const rest = catalogPictures.filter(x => x.id !== p.id);
- const same = rest.filter(x => inCategory(x, p.category));
- return [...same, ...rest.filter(x => !same.includes(x))].slice(0, n);
+ const top = (slug: string) => slug.split('/')[0];
+ const related = relatedCategories(p.category).map(c => c.slug);
+ const rank = (x: CatalogPicture) => inCategory(x, p.category) ? 0
+  : x.category.includes('/') && top(x.category) === top(p.category) ? 1
+  : related.some(slug => inCategory(x, slug)) ? 2 + related.findIndex(slug => inCategory(x, slug)) : 99;
+ return rest.map((x, i) => ({ x, i, r: rank(x) })).sort((a, b) => a.r - b.r || a.i - b.i).slice(0, n).map(e => e.x);
 }
 
 /** Picture pages share URL space with categories (/dp/<pic>/ vs /dp/friends/)

@@ -32,3 +32,19 @@ to surface "last AI prompt" per project. Keep entries append-only.
 > index.astro (CHECK_076). Pushed `a7e7d45`; live checks passed.
 > Open: `PUBLIC_GA_ID`, review draft card text, 286 placeholder slots, GSC
 > review 2026-11-03.
+
+## 2026-10-11 — v1.G content depth (per write-lamill-seo-page); www redirect fix
+
+> Audit against the SEO-page skill: all 24 indexable pages thin and templated
+> (68–147 words, captions as H1s, shared generator heading, tagline reused as
+> meta description, no FAQ). Placed as v1.G and built: per-category answer,
+> sections, FAQ + `FAQPage`, `CollectionPage` + `BreadcrumbList` on every
+> category, per-category generator copy, query-led picture H1s with their own
+> description and paragraph, related pictures by category → cluster, hub
+> breadcrumbs, home direct-answer paragraph. `good-morning-images.astro` folded
+> into `[...slug].astro`. Target queries from operator-authored sources only
+> (Ahrefs out of units). Separately: `www.lamill.pics` 522 → 301 to apex via
+> the portfolio CHECK_150 fixer (CF token needed Zone → Single Redirect: Edit).
+> Open: keyword pull for volume/KD, 3 categories with no query on record,
+> growth-log entry when v1.G deploys.
+

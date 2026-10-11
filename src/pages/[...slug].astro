@@ -1,19 +1,17 @@
 ---
 // Ported from genai/src/routes/$.tsx (splat category route). One static page
-// per category (/good-morning-images has its own explicit route) plus one
-// picture page per live gallery image at /<category>/<image-slug>/.
+// per category, one per language with enough art, and one picture page per
+// live gallery image at /<category>/<image-slug>/.
 import Layout from '../layouts/Layout.astro';
 import SocialImage from '../components/SocialImage.astro';
 import { CategoryPage, PicturePage } from '../components/pics/experience';
 import { categories, catalog, type Category, type Picture } from '../lib/pics';
 import { galleryFor } from '../lib/gallery-data';
-import { assertNoPathCollisions, catalogPictures, jpegPath, languagePages, languagePath, relatedPictures, LANGUAGES, SITE, type Language } from '../lib/catalog';
+import { assertNoPathCollisions, catalogPictures, imagePath, jpegPath, languagePages, languagePath, pageTitle, parentCategory, relatedPictures, LANGUAGES, SITE, type Language } from '../lib/catalog';
 
 export function getStaticPaths() {
   assertNoPathCollisions();
-  const categoryPages = categories
-    .filter((category) => category.slug !== 'good-morning-images')
-    .map((category) => ({ params: { slug: category.slug }, props: { kind: 'category' as const, category } }));
+  const categoryPages = categories.map((category) => ({ params: { slug: category.slug }, props: { kind: 'category' as const, category } }));
   const picturePages = catalogPictures.map((entry) => {
     const picture = catalog.find((p) => p.id === entry.id)!;
     const category = categories.find((c) => c.slug === entry.category)!;
@@ -32,50 +30,76 @@ type Props =
   | { kind: 'picture'; category: Category; picture: Picture; related: Picture[] };
 const props = Astro.props as Props;
 const { category } = props;
-const lead = props.kind === 'picture' ? props.picture
-  : galleryFor(category.slug).find((p) => props.kind !== 'language' || p.language === props.language);
+const gallery = galleryFor(category.slug).filter((p) => props.kind !== 'language' || p.language === props.language);
+const lead = props.kind === 'picture' ? props.picture : gallery[0];
 const canonical = props.kind === 'picture' ? `${SITE}/${category.slug}/${props.picture.slug}/`
   : props.kind === 'language' ? SITE + languagePath(category.slug, props.language)
   : `${SITE}/${category.slug}/`;
-const title = props.kind === 'picture' ? `${props.picture.title} — ${category.name} — LaMill Pics`
-  : props.kind === 'language' ? `${category.name} in ${LANGUAGES[props.language].name} — LaMill Pics`
-  : `${category.name} — LaMill Pics`;
-const description = props.kind === 'picture'
-  ? `${props.picture.caption ?? props.picture.title}. Free to download and share on WhatsApp — add a name or message in one tap.`
-  : category.intro;
+const heading = props.kind === 'picture' ? props.picture.h1!
+  : props.kind === 'language' ? `${category.h1} in ${LANGUAGES[props.language].name}`
+  : category.h1;
+const title = pageTitle(props.kind === 'picture' ? props.picture.h1!
+  : props.kind === 'language' ? `${category.h1} in ${LANGUAGES[props.language].name}`
+  : category.title);
+const description = props.kind === 'picture' ? props.picture.description!
+  : props.kind === 'language' ? `${category.h1} in ${LANGUAGES[props.language].name}. ${category.description}`
+  : category.description;
 const ogImage = lead?.slug ? jpegPath({ category: lead.category, slug: lead.slug }) : category.image;
 const ogAlt = lead?.alt ?? category.name;
 // No live art yet → thin page: keep it out of the index until it has some.
 const noindex = props.kind === 'category' && galleryFor(category.slug).length === 0;
 
-const jsonLd = props.kind === 'picture' ? JSON.stringify({
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'ImageObject',
-      '@id': `${canonical}#image`,
-      contentUrl: new URL(props.picture.file!, SITE).href,
-      url: canonical,
-      name: props.picture.title,
-      caption: props.picture.caption ?? props.picture.title,
-      description: props.picture.alt,
-      width: 1080,
-      height: 1080,
-      encodingFormat: 'image/webp',
-      inLanguage: props.picture.language,
-      representativeOfPage: true,
-      creditText: 'LaMill Pics',
-    },
-    {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
-        { '@type': 'ListItem', position: 2, name: category.name, item: `${SITE}/${category.slug}/` },
-        { '@type': 'ListItem', position: 3, name: props.picture.title, item: canonical },
-      ],
-    },
-  ],
-}) : null;
+// Breadcrumb: Home → parent hub (if any) → category → picture. Mirrors the visible trail.
+const parent = parentCategory(category.slug);
+const trail = [
+  { name: 'Home', item: `${SITE}/` },
+  ...(parent ? [{ name: parent.name, item: `${SITE}/${parent.slug}/` }] : []),
+  { name: category.name, item: `${SITE}/${category.slug}/` },
+  ...(props.kind === 'language' ? [{ name: LANGUAGES[props.language].name, item: canonical }] : []),
+  ...(props.kind === 'picture' ? [{ name: props.picture.title, item: canonical }] : []),
+];
+const breadcrumb = {
+  '@type': 'BreadcrumbList',
+  itemListElement: trail.map((t, i) => ({ '@type': 'ListItem', position: i + 1, name: t.name, item: t.item })),
+};
+// FAQ is only rendered on the main category page, so only marked up there.
+const faq = props.kind === 'category' ? category.faq : [];
+const graph = props.kind === 'picture' ? [
+  {
+    '@type': 'ImageObject',
+    '@id': `${canonical}#image`,
+    contentUrl: new URL(props.picture.file!, SITE).href,
+    url: canonical,
+    name: heading,
+    caption: props.picture.caption ?? props.picture.title,
+    description: props.picture.alt,
+    width: 1080,
+    height: 1080,
+    encodingFormat: 'image/webp',
+    inLanguage: props.picture.language,
+    representativeOfPage: true,
+    creditText: 'LaMill Pics',
+  },
+  breadcrumb,
+] : [
+  {
+    '@type': 'CollectionPage',
+    '@id': `${canonical}#collection`,
+    url: canonical,
+    name: heading,
+    description,
+    inLanguage: [...new Set(gallery.map((p) => p.language).filter(Boolean))],
+    isPartOf: { '@id': `${SITE}/#website` },
+    ...(gallery.length ? { image: gallery.map((p) => new URL(imagePath({ category: p.category, slug: p.slug! }), SITE).href) } : {}),
+  },
+  breadcrumb,
+  ...(faq.length ? [{
+    '@type': 'FAQPage',
+    '@id': `${canonical}#faq`,
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  }] : []),
+];
+const jsonLd = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
 ---
 <Layout>
   <Fragment slot="head">
@@ -89,7 +113,7 @@ const jsonLd = props.kind === 'picture' ? JSON.stringify({
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary_large_image" />
     <SocialImage src={ogImage} alt={ogAlt} width={lead?.slug ? 1080 : undefined} height={lead?.slug ? 1080 : undefined} />
-    {jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
+    <script type="application/ld+json" set:html={jsonLd} />
   </Fragment>
   {props.kind === 'picture'
     ? <PicturePage client:load picture={props.picture} category={category} related={props.related} url={canonical} jpeg={jpegPath({ category: category.slug, slug: props.picture.slug! })} />

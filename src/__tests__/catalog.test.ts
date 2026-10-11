@@ -5,7 +5,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import data from '../data/gallery.json';
 import planned from '../data/gallery-placeholders.json';
-import { assertNoPathCollisions, categoryPath, categoryPictures, catalogCategories, catalogPictures, imagePath, jpegPath, picturePath, sitemapImages, LANGUAGES } from '../lib/catalog';
+import { assertNoPathCollisions, categoryPath, categoryPictures, catalogCategories, catalogPictures, imagePath, inCategory, jpegPath, pageTitle, parentCategory, picturePath, relatedCategories, relatedPictures, sitemapImages, LANGUAGES } from '../lib/catalog';
 import { galleryGaps } from '../lib/catalog-report';
 import { detectLanguage } from '../lib/track';
 
@@ -102,5 +102,92 @@ describe.skipIf(!existsSync(join(dist, 'index.html')))('built site', () => {
         expect(img, f).toMatch(/\bheight="\d+"/);
       }
     }
+  });
+});
+
+// v1.G — page copy: every indexable page has its own query-led heading, SERP
+// title/description, prose and FAQ, and nothing is shared boilerplate.
+const withArt = catalogCategories.filter(c => categoryPictures(c.slug).length > 0);
+const unique = (values: string[], what: string) => expect(new Set(values).size, what).toBe(values.length);
+describe('page copy', () => {
+  it('categories with art have a full, page-specific set of copy', () => {
+    for (const c of withArt) {
+      expect(pageTitle(c.title).length, `${c.slug} title`).toBeLessThanOrEqual(60);
+      expect(c.title, `${c.slug} title ≠ h1`).not.toBe(c.h1);
+      expect(c.description.length, `${c.slug} description`).toBeLessThanOrEqual(155);
+      for (const other of [c.intro, c.answer, c.card]) expect(c.description, c.slug).not.toBe(other);
+      expect(c.answer.split(/(?<=[.!?”])\s+/).length, `${c.slug} answer`).toBeGreaterThanOrEqual(2);
+      expect(c.sections.length, `${c.slug} sections`).toBeGreaterThanOrEqual(2);
+      expect(c.faq.length, `${c.slug} faq`).toBeGreaterThanOrEqual(4);
+      expect(c.faq.length, `${c.slug} faq`).toBeLessThanOrEqual(6);
+      for (const slug of c.related) expect(catalogCategories.map(x => x.slug), `${c.slug} related`).toContain(slug);
+      expect(c.related, c.slug).not.toContain(c.slug);
+    }
+  });
+  it('no title, description, heading, section heading, FAQ or generator copy is repeated across categories', () => {
+    unique(catalogCategories.map(c => c.h1), 'h1');
+    unique(catalogCategories.map(c => c.title), 'title');
+    unique(catalogCategories.map(c => c.description), 'description');
+    unique(catalogCategories.map(c => c.generator.heading), 'generator heading');
+    unique(catalogCategories.map(c => c.generator.example), 'generator example');
+    unique(catalogCategories.flatMap(c => c.sections.map(s => s.heading)), 'section heading');
+    unique(catalogCategories.flatMap(c => c.sections.flatMap(s => s.body)), 'paragraph');
+    unique(catalogCategories.flatMap(c => c.faq.map(f => f.q)), 'faq question');
+    unique(withArt.flatMap(c => c.faq.map(f => f.a)), 'faq answer');
+  });
+  it('every picture has its own heading, description and paragraph', () => {
+    for (const p of catalogPictures) {
+      expect(pageTitle(p.h1).length, `${p.id} title`).toBeLessThanOrEqual(60);
+      expect(p.description.length, `${p.id} description`).toBeLessThanOrEqual(155);
+      expect(p.about.length, `${p.id} about`).toBeGreaterThan(120);
+      expect(p.h1, p.id).not.toBe(p.title);
+    }
+    unique(catalogPictures.map(p => p.h1), 'picture h1');
+    unique(catalogPictures.map(p => p.description), 'picture description');
+    unique(catalogPictures.map(p => p.about), 'picture about');
+  });
+  it('related pictures start with the same category, then the same cluster', () => {
+    const peace = catalogPictures.find(p => p.id === 'peace')!;
+    expect(relatedPictures(peace).slice(0, 2).every(p => p.category.startsWith('dp/'))).toBe(true);
+    const bloom = catalogPictures.find(p => p.id === 'morning-bloom')!;
+    expect(relatedPictures(bloom).every(p => inCategory(p, 'good-morning-images'))).toBe(true);
+    for (const p of catalogPictures) expect(relatedPictures(p).map(r => r.id)).not.toContain(p.id);
+  });
+  it('a nested category links up to its hub, and the hub links down to every leaf', () => {
+    for (const c of catalogCategories) {
+      const parent = parentCategory(c.slug);
+      if (!parent) continue;
+      expect(relatedCategories(c.slug)[0]!.slug, c.slug).toBe(parent.slug);
+      expect(relatedCategories(parent.slug).map(x => x.slug), parent.slug).toContain(c.slug);
+    }
+  });
+});
+
+describe.skipIf(!existsSync(join(dist, 'index.html')))('built page copy', () => {
+  const page = (path: string) => readFileSync(join(dist, path, 'index.html'), 'utf8');
+  const text = (html: string) => html.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, ' ').replace(/&#x27;/g, '\'').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/\s+/g, ' ');
+  it('every indexable category page renders its heading, answer, prose and FAQ, with matching schema', () => {
+    for (const c of withArt) {
+      const html = page(categoryPath(c.slug)); const body = text(html);
+      expect(html.match(/<h1\b/g)?.length, c.slug).toBe(1);
+      expect(html, c.slug).toContain(`<title>${pageTitle(c.title).replace(/&/g, '&amp;')}</title>`);
+      for (const type of ['CollectionPage', 'BreadcrumbList', 'FAQPage']) expect(html, `${c.slug} ${type}`).toContain(`"@type":"${type}"`);
+      expect(body, c.slug).toContain(c.answer);
+      for (const s of c.sections) { expect(body, c.slug).toContain(s.heading); for (const t of s.body) expect(body, c.slug).toContain(t); }
+      for (const f of c.faq) { expect(body, c.slug).toContain(f.q); expect(body, c.slug).toContain(f.a); expect(html, c.slug).toContain(JSON.stringify(f.q)); }
+      expect(body, c.slug).toContain(c.generator.heading);
+    }
+  });
+  it('every picture page renders its own heading and paragraph', () => {
+    for (const p of catalogPictures) {
+      const body = text(page(picturePath(p)));
+      expect(body, p.id).toContain(p.h1);
+      expect(body, p.id).toContain(p.about);
+    }
+  });
+  it('no two indexable pages share a title or a meta description', () => {
+    const pages = htmlFiles(dist).map(f => readFileSync(f, 'utf8')).filter(h => !h.includes('name="robots" content="noindex'));
+    unique(pages.map(h => h.match(/<title>([\s\S]*?)<\/title>/)![1]!), 'title');
+    unique(pages.map(h => h.match(/<meta name="description" content="([^"]*)"/)![1]!), 'meta description');
   });
 });

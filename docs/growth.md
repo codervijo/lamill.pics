@@ -73,3 +73,13 @@ https://search.google.com/search-console directly.
 - **Action:** v1.B–v1.E (PRD): stable image paths, 14 picture pages, JPEG og:image, `<image:image>` sitemap entries, crawlable language-filter links, analytics events.
 - **Result:** TBD — review 2026-11-03
 - **Learning:** TBD
+
+## 2026-10-11 — Page-specific copy and FAQ get the thin gallery pages crawled, indexed and shown
+- **Status:** active
+- **Hypothesis:** The 24 indexable pages were thin and templated (68–147 words, captions as H1s, one shared generator heading, the tagline reused as meta description, no FAQ), which is a likely reason 4 of the 10 inspected URLs sat at "discovered, not indexed". Giving every category a query-led H1, a direct answer, its own sections and FAQ (with `FAQPage` / `CollectionPage` / `BreadcrumbList` schema), and every picture page its own heading, description and paragraph, gets the remaining pages indexed and starts impressions on the category queries. It fails if the indexed ratio and impressions are unchanged at review.
+- **KPI:** GSC indexed ratio of the top-10 inspected URLs; 28d impressions and clicks; impressions on `good morning images`, `dp for whatsapp`, `friends group dp`, `couple dp`, `islamic dp`, `birthday wishes with name`
+- **Baseline:** 6/10 inspected URLs indexed; 3 impressions, 0 clicks (GSC 28d, `portfolio project seo`, 2026-10-11)
+- **Action:** v1.G (PRD). Category pages 94–147 → 384–665 words; picture pages 68–74 → 147–166. Target queries came from operator-authored sources (`lamill.toml`, this log, `AI_AGENTS.md`), with no fresh volume/KD pull; three categories have no query on record. Same day: `www.lamill.pics` 522 → 301 to the apex.
+- **Result:** TBD — review 2026-11-08
+- **Learning:** TBD
+

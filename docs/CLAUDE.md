@@ -16,6 +16,13 @@ Key mechanics (non-obvious from a skim):
 - `src/data/gallery.json` drives everything: image paths
   (`/images/<category>/<slug>.webp`, stable, in `public/`), picture pages
   (`/<category>/<slug>/`), the image sitemap, filters, card text.
+- Page copy (v1.G) is data too: each category in `gallery.json` carries `query`,
+  `h1`, `title`, `description`, `answer`, `sections`, `faq`, `generator` and
+  `related`; each picture carries `h1`, `description`, `about`. Tests fail on
+  any title, description, section heading, paragraph or FAQ repeated across
+  pages. Adding a picture or category means writing its copy.
+- "Add a name or message" **replaces** the picture's words (it does not append),
+  and the generator is still a mock ("Sample creations"). Copy must say so.
 - `astro.config.mjs` imports `src/lib/catalog.ts` (pure, no asset imports)
   for the image sitemap, and writes a `.jpg` copy of each gallery WebP at
   build time (`og:image` + no-JS download).
@@ -89,6 +96,9 @@ future Claude sessions don't re-propose them.>
   `gallery.json` first.
 - **2026-10-06 — Art-less categories are `noindex, follow`** (today
   `/dp/attitude/`) and out of the sitemap. This lifts automatically when art lands.
+- **2026-10-11 — Category copy names specific pictures.** Single-image
+  categories describe their one picture ("The picture here shows…"). Reword
+  when more art lands in that category.
 - **Known, unfixed (pre-existing):** generated "choices" on the home and
   category generators show the source picture's baked WebP (original text),
   not the prompt text. `mockGenerate` keeps `file`; fixing it changes the visuals.

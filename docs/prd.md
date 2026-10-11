@@ -1,10 +1,10 @@
 ---
 project: lamill.pics
 prd_version: 1
-project_version: v1.F
+project_version: v1.G
 status: live
 owner: Vijo
-last_updated: 2026-10-06
+last_updated: 2026-10-11
 ---
 
 # lamill.pics — PRD
@@ -57,6 +57,7 @@ Two-level versioning convention (canonical: `sites/portfolio/AI_AGENTS.md`):
 | **v1.D** | gallery depth | data layer supports 30–60 images per category; placeholder entries flagged in data and not rendered; crawlable language filters; per-category card description in data, replacing "Find your little favourite" | ✅ live 2026-10-06 (`a7e7d45`) — awaiting operator validation |
 | **v1.E** | analytics events | `generate`, `chip_tap`, `image_open`, `add_name`, `download`, `share`, `filter`, `make_own_cta`, each with `category` + `language`; GA4 via `PUBLIC_GA_ID`; console log in dev | ✅ live 2026-10-06 (`a7e7d45`) — awaiting operator validation |
 | **v1.F** | conformance: favicon + meta robots | brand favicon (sparkle mark, brand green) replacing the Lovable default `favicon.ico` + scaffold `favicon.svg` (CHECK_060); `<meta name="robots">` on every indexable page with `max-image-preview:large`, and literal `og:image` in `index.astro` (CHECK_075/076 parse page source) | ✅ live 2026-10-06 (`a7e7d45`) — awaiting operator validation |
+| **v1.G** | content depth (per `write-lamill-seo-page`) | target query validated per indexable page from keyword data before any copy (never invented; KD ≤ 20); per-category prose in `gallery.json`: direct-answer intro, page-specific substance, 4–6 real FAQ (visible + `FAQPage`); picture-page H1 / title / description led by the query, caption kept as caption, titles ≤ 60 chars; per-category generator heading + example prompt, replacing the shared "Make their morning a little more personal." / "Good morning Amma…" boilerplate; meta description written separately from the on-page tagline; `CollectionPage` + `BreadcrumbList` on every category page; related pictures drawn from the same category / cluster first; home page gets a direct-answer paragraph | ✅ shipped 2026-10-11 — awaiting operator validation; target queries taken from operator-authored sources, not re-validated (see §6) |
 
 ## 6. Open questions
 
@@ -67,3 +68,5 @@ Two-level versioning convention (canonical: `sites/portfolio/AI_AGENTS.md`):
 - **Crawlable filters.** Filter chips are real `<a href>` links. A language gets its own static page `/<category>/<language>/` (as in the content strategy) only once it has real images, so there are no empty filter pages. Style filter waits on a `style` field in data. — answered 2026-10-06
 - **Analytics provider.** GA4 via `PUBLIC_GA_ID` (fleet pattern, e.g. calcengine.site); inert until the ID is set. — answered 2026-10-06
 - **1080×1080 download.** Client-side canvas PNG (existing `picture-export.ts`), so an added name is included; the baked 1080×1080 WebP stays the indexable image. — answered 2026-10-06
+- **v1.G target queries — where they came from.** Ahrefs had 0 API units (trial), so no fresh volume/KD pull was possible. Category headings use the operator-authored queries already on record: `good morning images`, `friends group dp`, `islamic dp`, `birthday wishes with name` (`lamill.toml`), `dp for whatsapp` (`docs/growth.md`), `couple dp`, `attitude dp` (`AI_AGENTS.md` § Content strategy). Three categories have **no** query on record (`query: null` in `gallery.json`): `/christian/good-morning/`, `/good-night-images/`, `/motivational-images/` — their headings describe the page and are unvalidated. Picture-page headings describe the picture under its category's query and are also unvalidated. Volume and KD for all of them still need a keyword pull. — open 2026-10-11
+- **`/good-morning-images/` route.** The explicit `good-morning-images.astro` page was folded into `[...slug].astro` so every category shares one template, schema and copy path. Same URL, same canonical. — answered 2026-10-11
