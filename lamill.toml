@@ -39,6 +39,41 @@ status = "open"
 priority = "low"
 task = "Confirm GSC verification + sitemap submitted (re-run deploy if it timed out)"
 
+[[todo]]
+status = "open"
+priority = "medium"
+task = "Operator: read the live v1.G copy (start with /good-morning-images/ and one picture page) — tone and WhatsApp claims"
+
+[[todo]]
+status = "open"
+priority = "medium"
+task = "Keyword pull (volume + KD) for v1.G target queries; 3 categories have none on record (PRD §6) — needs Ahrefs units or another source"
+
+[[todo]]
+status = "open"
+priority = "medium"
+task = "Set PUBLIC_GA_ID in Cloudflare — events are inert until then"
+
+[[todo]]
+status = "open"
+priority = "medium"
+task = "Art: 7 categories hold one picture, /dp/attitude/ none (286 placeholder slots); reword single-picture category copy when art lands"
+
+[[todo]]
+status = "open"
+priority = "medium"
+task = "Growth-log reviews due 2026-11-03 (two entries) and 2026-11-08 (v1.G)"
+
+[[todo]]
+status = "open"
+priority = "low"
+task = "Tick GSC verification + sitemap boxes in AI_AGENTS.md post-deploy checklist (both done)"
+
+[[todo]]
+status = "open"
+priority = "low"
+task = "Fix generator 'choices' showing the picture's baked text instead of the typed prompt (docs/CLAUDE.md, known unfixed)"
+
 [content]
 # Declarative content identity for this site.
 # Authored by the human; consumed by rankmill to generate drafts and run audits.
