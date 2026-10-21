@@ -83,3 +83,12 @@ https://search.google.com/search-console directly.
 - **Result:** TBD — review 2026-11-08
 - **Learning:** TBD
 
+
+## 2026-10-21 — More pictures per page (v1.H pilot) lifts impressions and indexes /dp/attitude/
+- **Status:** active
+- **Hypothesis:** Impressions are capped by how few pictures and indexable URLs the site has (24 URLs, 14 pictures). Adding original pictures, and art to the one art-less category, adds image-search surface and gets `/dp/attitude/` indexed. If this pilot moves impressions, scale v1.H toward 30–60 pictures per category. It fails if the 5 new picture pages and `/dp/attitude/` are not indexed, or impressions do not grow faster than the pre-pilot trend, by review.
+- **KPI:** GSC 28d impressions (total and search type = Image); indexing of `/dp/attitude/` and the 5 new picture pages; impressions on `attitude dp`
+- **Baseline:** 312 impressions, 0 clicks, avg position 6.3 (GSC 28d, `portfolio project seo`, 2026-10-20); 6/10 inspected URLs indexed; `/dp/attitude/` was `noindex`
+- **Action:** v1.H pilot (`2cfdd51`, live 2026-10-21): 5 new pictures (lion attitude DP, friends at sunset, strawberry cake, Malayalam nilavilakku, mosque at dusk), `/dp/attitude/` indexable with full copy + FAQ. 19 pictures, 30 sitemap-listed pages.
+- **Result:** TBD — review 2026-11-18
+- **Learning:** TBD
