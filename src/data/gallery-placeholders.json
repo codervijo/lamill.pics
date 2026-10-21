@@ -2,39 +2,6 @@
  "_note": "Planned gallery slots (status: placeholder). Never rendered, never in the sitemap. To publish one: fill every field, add the 1080×1080 WebP at public/images/<category>/<slug>.webp, set status to live and move it into gallery.json.",
  "pictures": [
   {
-   "id": "good-morning-images-todo-02",
-   "category": "good-morning-images",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "good-morning-images-todo-03",
-   "category": "good-morning-images",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "good-morning-images-todo-04",
-   "category": "good-morning-images",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
    "id": "good-morning-images-todo-05",
    "category": "good-morning-images",
    "status": "placeholder",
@@ -882,17 +849,6 @@
    "tone": ""
   },
   {
-   "id": "dp-couple-todo-01",
-   "category": "dp/couple",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
    "id": "dp-couple-todo-02",
    "category": "dp/couple",
    "status": "placeholder",
@@ -1509,28 +1465,6 @@
    "tone": ""
   },
   {
-   "id": "christian-good-morning-todo-01",
-   "category": "christian/good-morning",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "christian-good-morning-todo-02",
-   "category": "christian/good-morning",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
    "id": "christian-good-morning-todo-03",
    "category": "christian/good-morning",
    "status": "placeholder",
@@ -1828,28 +1762,6 @@
    "tone": ""
   },
   {
-   "id": "birthday-wishes-todo-02",
-   "category": "birthday-wishes",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "birthday-wishes-todo-03",
-   "category": "birthday-wishes",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
    "id": "birthday-wishes-todo-04",
    "category": "birthday-wishes",
    "status": "placeholder",
@@ -2127,28 +2039,6 @@
   {
    "id": "birthday-wishes-todo-29",
    "category": "birthday-wishes",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "good-night-images-todo-01",
-   "category": "good-night-images",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "good-night-images-todo-02",
-   "category": "good-night-images",
    "status": "placeholder",
    "language": "",
    "slug": "",
@@ -2446,17 +2336,6 @@
   {
    "id": "good-night-images-todo-29",
    "category": "good-night-images",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "dp-attitude-todo-02",
-   "category": "dp/attitude",
    "status": "placeholder",
    "language": "",
    "slug": "",
@@ -2765,17 +2644,6 @@
   {
    "id": "dp-attitude-todo-30",
    "category": "dp/attitude",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "motivational-images-todo-01",
-   "category": "motivational-images",
    "status": "placeholder",
    "language": "",
    "slug": "",

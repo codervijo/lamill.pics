@@ -17,7 +17,7 @@
         {
           "heading": "Choosing a morning picture for the person you are sending it to",
           "body": [
-            "A good morning message lands differently depending on who opens it. For a parent or an older relative, a greeting in their own language reads as more personal than an English one: the Malayalam pictures say സുപ്രഭാതം, and one is addressed to Amma directly (സുപ്രഭാതം അമ്മേ). For a family or office group, a plain “Good morning” over flowers or a sunrise is the safe choice, because nobody is left out.",
+            "A good morning message lands differently depending on who opens it. For a parent or an older relative, a greeting in their own language reads as more personal than an English one: the Malayalam pictures say സുപ്രഭാതം or ശുഭദിനം, and two are addressed to a parent directly: സുപ്രഭാതം അമ്മേ and സുപ്രഭാതം അച്ഛാ. For a family or office group, a plain “Good morning” over flowers or a sunrise is the safe choice, because nobody is left out.",
             "If the group is a church or prayer group, the verse picture (“This is the day the Lord has made”, Psalm 118:24) fits better than a general greeting. For one close friend, the shorter lines such as “Hello, sunshine.” or “Start with kindness.” feel less like a forward."
           ]
         },
@@ -45,7 +45,7 @@
         },
         {
           "q": "Do you have good morning images in Malayalam and Hindi?",
-          "a": "Yes. Use the language filter above the gallery to see only Malayalam or only Hindi pictures. The Malayalam pictures say സുപ്രഭാതം and the Hindi pictures say सुप्रभात, set as real text so the letters are formed correctly."
+          "a": "Yes. Use the language filter above the gallery to see only Malayalam or only Hindi pictures. The Malayalam pictures say സുപ്രഭാതം or ശുഭദിനം, and the Hindi pictures say सुप्रभात, set as real text so the letters are formed correctly."
         },
         {
           "q": "What size are the good morning images?",
@@ -197,7 +197,7 @@
       "h1": "Couple DP",
       "title": "Couple DP for WhatsApp, Free to Download",
       "description": "Couple DPs for WhatsApp: romantic square pictures with a short line you can keep or replace with your own names or date. Free, no sign-up.",
-      "answer": "A couple DP is a profile picture that shows the two of you, or stands in for you, on WhatsApp. The ones here are illustrated, square and free: a couple seen from behind, with a short line such as “You. Me. Always.” that you can replace with your names or a date.",
+      "answer": "A couple DP is a profile picture that shows the two of you, or stands in for you, on WhatsApp. The ones here are square and free, and neither shows a face: a couple seen from behind with “You. Me. Always.”, and two hands with wedding rings around cups of tea with “Two hearts. One home.” You can replace the line with your names or a date.",
       "sections": [
         {
           "heading": "Why an illustrated couple DP instead of a photo",
@@ -208,7 +208,7 @@
         {
           "heading": "Making the DP about the two of you",
           "body": [
-            "Open the picture and type under “Add a name or message”. Your text replaces “You. Me. Always.”, so write the full line: both names, a wedding date, or a few words only the two of you understand. Short lines survive best, because WhatsApp shows the DP in a small circle.",
+            "Open the picture and type under “Add a name or message”. Your text replaces the line on the picture, so write the full line: both names, a wedding date, or a few words only the two of you understand. Short lines survive best, because WhatsApp shows the DP in a small circle.",
             "Some couples both set the same picture. Others each put the other's name on it. Either works, since every download is made from the text you typed."
           ]
         }
@@ -224,7 +224,7 @@
         },
         {
           "q": "Does the couple DP show faces?",
-          "a": "No. The couple is drawn from behind, so nobody's face is shown."
+          "a": "No. One picture shows a couple from behind and the other shows only their hands, so nobody’s face is shown."
         },
         {
           "q": "Can I write the line in my own language?",
@@ -310,7 +310,7 @@
       "h1": "Christian Good Morning Images",
       "title": "Christian Good Morning Images & Verses",
       "description": "Christian good morning images with a Bible verse, free to share in your family or church WhatsApp group. Add your own verse or blessing first.",
-      "answer": "A Christian good morning image is a morning greeting built around a Bible verse or a short blessing. The picture here sets Psalm 118:24, “This is the day the Lord has made”, over a sunrise above a river valley. It is free to download, and you can replace the verse with one of your own.",
+      "answer": "A Christian good morning image is a morning greeting built around a Bible verse or a short blessing. The pictures here set three verses over morning scenes: Psalm 118:24 over a sunrise above a river valley, Psalm 46:10 over a still lake at dawn, and Lamentations 3:22–23 over light breaking through a misty forest. They are free to download, and you can replace the verse with one of your own.",
       "sections": [
         {
           "heading": "Psalm 118:24 as a morning verse",
@@ -321,15 +321,15 @@
         {
           "heading": "Sending a verse picture to a church or family group",
           "body": [
-            "In a prayer group or church group, a verse picture says more than a plain “Good morning”. If your group follows a daily reading, open the picture, type that day's verse under “Add a name or message”, and download it. Put the reference in the line you type, because adding your own text removes the small “Psalm 118:24” line.",
+            "In a prayer group or church group, a verse picture says more than a plain “Good morning”. If your group follows a daily reading, open the picture, type that day's verse under “Add a name or message”, and download it. Put the reference in the line you type, because adding your own text removes the small reference line.",
             "Verses in Malayalam or Hindi can be typed the same way and are set as real text."
           ]
         }
       ],
       "faq": [
         {
-          "q": "Which Bible verse is on the picture?",
-          "a": "Psalm 118:24: “This is the day the Lord has made.” The reference is printed in small text under the verse."
+          "q": "Which Bible verses are on the pictures?",
+          "a": "Psalm 118:24 (“This is the day the Lord has made.”), Psalm 46:10 (“Be still, and know that I am God.”) and Lamentations 3:22–23 (“His mercies are new every morning.”, a short form of the verse). Each reference is printed in small text under the verse."
         },
         {
           "q": "Can I put a different verse on it?",
@@ -340,8 +340,8 @@
           "a": "Yes. Malayalam, Hindi and other scripts are set as real text, so the letters are formed correctly."
         },
         {
-          "q": "Is this picture also in the good morning gallery?",
-          "a": "Yes. It appears in the Good Morning Images gallery too, alongside the general greetings."
+          "q": "Do these pictures also appear in the good morning gallery?",
+          "a": "The Psalm 118:24 picture does: it appears in the Good Morning Images gallery too, alongside the general greetings. The other verse pictures are only here."
         }
       ],
       "generator": {
@@ -367,12 +367,12 @@
       "h1": "Birthday Wishes with Name",
       "title": "Birthday Wishes with Name, Free Image",
       "description": "Make a birthday wish with their name on it: type your line onto a cake-and-balloons picture and download it free to send on WhatsApp.",
-      "answer": "To send a birthday wish with a name on it, open one of the birthday pictures here, type the wish including their name, and download it. There are two square 1080 × 1080 pictures: a cake with candles, strawberries and balloons, and a white strawberry cake with pink roses and lit candles. Both are free and need no sign-up.",
+      "answer": "To send a birthday wish with a name on it, open one of the birthday pictures here, type the wish including their name, and download it. There are four square 1080 × 1080 pictures: two cakes, a cupcake with a single candle, and pastel balloons with a gift saying ജന്മദിനാശംസകൾ in Malayalam. All are free and need no sign-up.",
       "sections": [
         {
           "heading": "How the name goes on the birthday picture",
           "body": [
-            "Each picture starts with “Happy Birthday” and a small line underneath. When you type under “Add a name or message”, your text replaces both, so type the whole wish and not only the name: “Happy Birthday, Anu!” or “Happy 60th Birthday, Appa”. You have up to 120 characters, and a longer wish is set smaller so that it fits."
+            "Each picture starts with a birthday greeting and a small line underneath. When you type under “Add a name or message”, your text replaces both, so type the whole wish and not only the name: “Happy Birthday, Anu!” or “Happy 60th Birthday, Appa”. You have up to 120 characters, and a longer wish is set smaller so that it fits."
           ]
         },
         {
@@ -399,7 +399,7 @@
         },
         {
           "q": "Is the name written on the cake?",
-          "a": "No. The picture shows a cake with candles, strawberries and a pink bow, and the wish with the name sits in the space above the cake."
+          "a": "No. Nothing is written on the cakes, the cupcake or the balloons; the wish with the name sits in the space above them."
         },
         {
           "q": "How long can the birthday wish be?",
@@ -433,12 +433,12 @@
       "h1": "Good Night Images",
       "title": "Good Night Images for WhatsApp, Free",
       "description": "Good night images to send on WhatsApp: a calm moonlit lake with a short goodnight line. Free to download, or type your own words on it first.",
-      "answer": "These are good night images to send on WhatsApp at the end of the day. The picture here shows a crescent moon over a lake at night, with “Good night” and “Let tomorrow take care of itself.” It is free to download as a square 1080 × 1080 image, and you can replace the words with your own.",
+      "answer": "These are good night images to send on WhatsApp at the end of the day. There are three: a crescent moon over a lake with “Good night”, a starry village with “Sleep well.”, and a full moon over Kerala palms with ശുഭരാത്രി in Malayalam. Each is a free square 1080 × 1080 image, and you can replace the words with your own.",
       "sections": [
         {
           "heading": "A good night message is usually for one person",
           "body": [
-            "A good night picture is often more personal than a good morning forward. It tends to go to one person: a parent living alone, a child away from home, a partner in another time zone. That is why this picture is dark and still, with one short line, and why it is worth changing the wording to something you would actually say to that person."
+            "A good night picture is often more personal than a good morning forward. It tends to go to one person: a parent living alone, a child away from home, a partner in another time zone. That is why these pictures are dark and still, with one short line, and why it is worth changing the wording to something you would actually say to that person."
           ]
         },
         {
@@ -454,8 +454,8 @@
           "a": "Yes. Type ശുഭരാത്രി, शुभ रात्रि or any other greeting and it is set as real text on the picture."
         },
         {
-          "q": "What does the good night picture say?",
-          "a": "“Good night”, with “Let tomorrow take care of itself.” in smaller text under it."
+          "q": "What do the good night pictures say?",
+          "a": "“Good night” with “Let tomorrow take care of itself.”; “Sleep well.” with “See you in the morning.”; and ശുഭരാത്രി with സുഖമായി ഉറങ്ങൂ (sleep well), each in smaller text under the main line."
         },
         {
           "q": "Can I add a name to the good night image?",
@@ -489,7 +489,7 @@
       "h1": "Attitude DP",
       "title": "Attitude DP for WhatsApp",
       "description": "Attitude DPs for WhatsApp: bold square pictures with a short, confident line you can keep or replace with your own. Free, no sign-up.",
-      "answer": "An attitude DP is a profile picture that says something about you without a long status: a bold image and a few confident words. The one here is a free square picture of a lion lit gold against black, with “Born to stand out.” on it, and you can replace the line with your own.",
+      "answer": "An attitude DP is a profile picture that says something about you without a long status: a bold image and a few confident words. The ones here are free square pictures: a lion lit gold against black with “Born to stand out.”, and an eagle over dark mountains with “Rise above.” You can replace the line with your own.",
       "sections": [
         {
           "heading": "What makes an attitude DP work at DP size",
@@ -500,7 +500,7 @@
         {
           "heading": "Writing your own attitude line",
           "body": [
-            "Open the picture and type under “Add a name or message”. Your words replace “Born to stand out.” and the line beneath it. Short and sharp works best: “Less talk. More action.”, a nickname, or a line in Malayalam or Hindi. Whatever you type is set as real text over the art."
+            "Open the picture and type under “Add a name or message”. Your words replace the line on the picture and the one beneath it. Short and sharp works best: “Less talk. More action.”, a nickname, or a line in Malayalam or Hindi. Whatever you type is set as real text over the art."
           ]
         }
       ],
@@ -518,8 +518,8 @@
           "a": "Yes. Malayalam, Hindi, Arabic and English are all set as real text, so the letters come out correctly instead of broken."
         },
         {
-          "q": "Why does the attitude DP use a lion and not a person?",
-          "a": "A lion reads instantly at small sizes and does not show your face or anyone else’s, so it works if you would rather not post a photo of yourself."
+          "q": "Why do the attitude DPs show animals and not people?",
+          "a": "A lion or an eagle reads instantly at small sizes and does not show your face or anyone else’s, so it works if you would rather not post a photo of yourself."
         }
       ],
       "generator": {
@@ -545,7 +545,7 @@
       "h1": "Motivational Images",
       "title": "Motivational Images with Quotes, Free",
       "description": "Motivational images with a short quote, free to download and share. Or put your own quote on the picture and send it to someone who needs it.",
-      "answer": "Motivational images are short quotes set on a picture, made to be sent to someone who needs a push. The picture here reads “Small steps. Beautiful beginnings.” over a moonlit lake. It is free to download at 1080 × 1080, and you can replace the quote with your own.",
+      "answer": "Motivational images are short quotes set on a picture, made to be sent to someone who needs a push. The pictures here read “Small steps. Beautiful beginnings.” over a moonlit lake and “Keep climbing.” over a mountain trail at dawn. They are free to download at 1080 × 1080, and you can replace the quote with your own.",
       "sections": [
         {
           "heading": "Short quotes are the ones that get read",
@@ -877,6 +877,185 @@
       "h1": "Islamic DP: مساء الخير, Mosque at Dusk",
       "description": "A mosque silhouette and crescent moon at dusk with مساء الخير (good evening) in Arabic. A free DP for WhatsApp, no people shown.",
       "about": "A mosque with domes and a single minaret stands in silhouette against a sky fading from gold to soft teal, mirrored in still water, with a thin crescent moon above. مساء الخير, “good evening”, is set in real Arabic script, right to left, with “Good evening” beneath it. There are no people in the picture."
+    },
+    {
+      "id": "good-morning-images-todo-02",
+      "slug": "suprabhatham-malayalam-backwaters-boat",
+      "category": "good-morning-images",
+      "language": "ml",
+      "status": "live",
+      "art": "backwaters-boat",
+      "title": "Backwaters boat at sunrise",
+      "text": "സുപ്രഭാതം",
+      "subtitle": "പുതിയ പ്രതീക്ഷകളോടെ ഒരു പുതിയ ദിവസം",
+      "tone": "dark",
+      "h1": "Malayalam Good Morning: Backwaters Sunrise",
+      "description": "A country boat on the Kerala backwaters at sunrise with സുപ്രഭാതം (good morning). A free Malayalam good morning image for WhatsApp.",
+      "about": "A wooden country boat rests on still Kerala backwater at sunrise, with coconut palms and soft golden mist. It reads സുപ്രഭാതം (good morning) with പുതിയ പ്രതീക്ഷകളോടെ ഒരു പുതിയ ദിവസം, “a new day with new hopes,” underneath. Type your own line in Malayalam or English and it replaces both."
+    },
+    {
+      "id": "good-morning-images-todo-03",
+      "slug": "suprabhatham-achan-malayalam-tea",
+      "category": "good-morning-images",
+      "language": "ml",
+      "status": "live",
+      "art": "tea-tumbler",
+      "title": "Tea for Achan",
+      "text": "സുപ്രഭാതം അച്ഛാ",
+      "subtitle": "സ്നേഹപൂർവ്വം",
+      "tone": "light",
+      "h1": "Good Morning Achan in Malayalam",
+      "description": "A steaming steel tumbler of tea with jasmine and സുപ്രഭാതം അച്ഛാ (good morning, Achan). A free Malayalam morning image for your father.",
+      "about": "A steel tumbler and davara of hot tea steam on a sunny window sill, with a few jasmine flowers beside it. It reads സുപ്രഭാതം അച്ഛാ, “good morning, Achan,” with സ്നേഹപൂർവ്വം (with love) underneath: a morning picture made to send to your father. Change it to Appa, Pappa or a name by typing your own line."
+    },
+    {
+      "id": "good-morning-images-todo-04",
+      "slug": "shubhadinam-malayalam-hibiscus",
+      "category": "good-morning-images",
+      "language": "ml",
+      "status": "live",
+      "art": "hibiscus",
+      "title": "Red hibiscus with dew",
+      "text": "ശുഭദിനം നേരുന്നു",
+      "subtitle": "ഇന്ന് നല്ലതു മാത്രം സംഭവിക്കട്ടെ",
+      "tone": "dark",
+      "h1": "Malayalam Good Day Wish: Red Hibiscus",
+      "description": "A red chembarathi (hibiscus) with morning dew and ശുഭദിനം നേരുന്നു (wishing you a good day). A free Malayalam good morning image.",
+      "about": "A bright red hibiscus, the chembarathi of Kerala gardens, covered in morning dew against soft green. It reads ശുഭദിനം നേരുന്നു, “wishing you a good day,” with ഇന്ന് നല്ലതു മാത്രം സംഭവിക്കട്ടെ, “may only good things happen today,” underneath. Type your own wish and it replaces both lines."
+    },
+    {
+      "id": "christian-good-morning-todo-01",
+      "slug": "christian-good-morning-lamentations-3-22",
+      "category": "christian/good-morning",
+      "language": "en",
+      "status": "live",
+      "art": "misty-forest",
+      "title": "Morning light through the trees",
+      "text": "His mercies are\nnew every morning.",
+      "subtitle": "Lamentations 3:22–23",
+      "tone": "light",
+      "h1": "Christian Good Morning: Lamentations 3:22–23",
+      "description": "Morning light through a misty forest with “His mercies are new every morning.” (Lamentations 3:22–23). A free Christian good morning image.",
+      "about": "Sunbeams stream through tall trees in a misty forest at sunrise, with dew on the grass below. The verse reads “His mercies are new every morning.”, a short form of Lamentations 3:22–23, with the reference in small text underneath. Type a different verse, or the same one in Malayalam, and it replaces the words."
+    },
+    {
+      "id": "christian-good-morning-todo-02",
+      "slug": "christian-good-morning-psalm-46-10",
+      "category": "christian/good-morning",
+      "language": "en",
+      "status": "live",
+      "art": "lake-dock",
+      "title": "Still lake at dawn",
+      "text": "Be still, and know\nthat I am God.",
+      "subtitle": "Psalm 46:10",
+      "tone": "dark",
+      "h1": "Christian Good Morning: Psalm 46:10",
+      "description": "A still lake at dawn with a wooden dock and “Be still, and know that I am God.” (Psalm 46:10). A free Christian morning image for WhatsApp.",
+      "about": "A wooden dock runs out into a perfectly calm lake at dawn, with mist on the water and soft blue hills behind. The verse is Psalm 46:10, “Be still, and know that I am God.”, with the reference underneath. It suits a quiet morning message to a prayer group or someone going through a hard week."
+    },
+    {
+      "id": "dp-couple-todo-01",
+      "slug": "couple-dp-two-hearts-one-home",
+      "category": "dp/couple",
+      "language": "en",
+      "status": "live",
+      "art": "couple-hands-tea",
+      "title": "Two cups, two rings",
+      "text": "Two hearts.\nOne home.",
+      "tone": "dark",
+      "h1": "Couple DP: “Two hearts. One home.”",
+      "description": "Two hands with wedding rings around cups of tea, with “Two hearts. One home.” A free couple DP for WhatsApp, no faces shown.",
+      "about": "Two hands, each wearing a gold wedding ring, hold warm cups of tea that just touch on a wooden table, in soft window light. Only the hands are shown, so no faces appear in your DP. It reads “Two hearts. One home.” Type both your names or your wedding date and it replaces the line."
+    },
+    {
+      "id": "good-night-images-todo-01",
+      "slug": "good-night-sleep-well-starry-village",
+      "category": "good-night-images",
+      "language": "en",
+      "status": "live",
+      "art": "village-night",
+      "title": "Starry night over a village",
+      "text": "Sleep well.",
+      "subtitle": "See you in the morning.",
+      "tone": "light",
+      "h1": "Good Night Image: “Sleep well.”",
+      "description": "A quiet village under the Milky Way with one lit window, and “Sleep well.” “See you in the morning.” A free good night image for WhatsApp.",
+      "about": "A small village sleeps under a deep blue sky full of stars, with the Milky Way overhead and a single window still lit. It reads “Sleep well.” with “See you in the morning.” underneath, in pale lettering. Type a name, such as “Sleep well, Ammu”, and it replaces both lines."
+    },
+    {
+      "id": "good-night-images-todo-02",
+      "slug": "shubharathri-malayalam-good-night-moon",
+      "category": "good-night-images",
+      "language": "ml",
+      "status": "live",
+      "art": "moon-palms",
+      "title": "Full moon over the palms",
+      "text": "ശുഭരാത്രി",
+      "subtitle": "സുഖമായി ഉറങ്ങൂ",
+      "tone": "light",
+      "h1": "Malayalam Good Night Image: ശുഭരാത്രി",
+      "description": "A full moon over coconut palms and backwater with ശുഭരാത്രി (good night). A free Malayalam good night image for WhatsApp.",
+      "about": "A full moon rises beside silhouetted coconut palms, its light running across a calm backwater under a deep navy sky. It reads ശുഭരാത്രി, “good night,” with സുഖമായി ഉറങ്ങൂ, “sleep well,” underneath, set as real Malayalam text. Type your own line and it replaces both."
+    },
+    {
+      "id": "motivational-images-todo-01",
+      "slug": "motivational-quote-keep-climbing",
+      "category": "motivational-images",
+      "language": "en",
+      "status": "live",
+      "art": "hiker-dawn",
+      "title": "A climb at dawn",
+      "text": "Keep climbing.",
+      "subtitle": "The view is worth it.",
+      "tone": "dark",
+      "h1": "Motivational Image: “Keep climbing.”",
+      "description": "A hiker on a mountain trail at dawn with “Keep climbing.” and “The view is worth it.” A free motivational image to send or post.",
+      "about": "A lone hiker, seen from behind, walks up a rocky trail with layer after layer of mountains in blue and orange dawn light. It reads “Keep climbing.” with “The view is worth it.” underneath. Send it to someone halfway through exams, a new job or a long recovery, or type your own line."
+    },
+    {
+      "id": "birthday-wishes-todo-02",
+      "slug": "janmadinashamsakal-malayalam-birthday-balloons",
+      "category": "birthday-wishes",
+      "language": "ml",
+      "status": "live",
+      "art": "balloons-gift",
+      "title": "Balloons and a gift",
+      "text": "ജന്മദിനാശംസകൾ",
+      "subtitle": "ഒരായിരം ആശംസകൾ",
+      "tone": "dark",
+      "h1": "Malayalam Birthday Wish: ജന്മദിനാശംസകൾ",
+      "description": "Pastel balloons and a wrapped gift with ജന്മദിനാശംസകൾ (happy birthday) in Malayalam. Add their name and download it free.",
+      "about": "Pastel balloons in peach, mint, lilac and gold rise from a gift box tied with a satin ribbon. It reads ജന്മദിനാശംസകൾ, “happy birthday,” with ഒരായിരം ആശംസകൾ, “a thousand wishes,” underneath. Type the wish with their name, such as ജന്മദിനാശംസകൾ, മോളേ, and it replaces both lines."
+    },
+    {
+      "id": "birthday-wishes-todo-03",
+      "slug": "happy-birthday-cupcake-all-about-you",
+      "category": "birthday-wishes",
+      "language": "en",
+      "status": "live",
+      "art": "cupcake",
+      "title": "Cupcake with one candle",
+      "text": "Happy Birthday",
+      "subtitle": "Today is all about you.",
+      "tone": "dark",
+      "h1": "Happy Birthday Cupcake with Name",
+      "description": "A pink-frosted cupcake with one lit candle and confetti. Type “Happy Birthday” with their name on it and download it free.",
+      "about": "A single cupcake with swirled pink frosting, sprinkles and one lit candle sits among confetti, in front of soft pink and blue lights. It reads “Happy Birthday” with “Today is all about you.” underneath. Type the whole wish with the name, such as “Happy Birthday, Meera!”, and it replaces both lines."
+    },
+    {
+      "id": "dp-attitude-todo-02",
+      "slug": "attitude-dp-eagle-rise-above",
+      "category": "dp/attitude",
+      "language": "en",
+      "status": "live",
+      "art": "eagle",
+      "title": "An eagle above the storm",
+      "text": "Rise above.",
+      "subtitle": "Let them talk.",
+      "tone": "light",
+      "h1": "Attitude DP: Eagle, “Rise above.”",
+      "description": "A golden eagle soaring over dark mountains with “Rise above.” and “Let them talk.” A free attitude DP for WhatsApp.",
+      "about": "A golden eagle soars with its wings fully spread over dark, jagged peaks under a storm-grey sky. Above it, in white: “Rise above.” with “Let them talk.” underneath. The dark sky keeps the words sharp at DP size. Type your own line and it replaces both."
     }
   ]
 }

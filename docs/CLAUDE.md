@@ -35,6 +35,10 @@ Key mechanics (non-obvious from a skim):
   A new art key also goes in `pics.ts` `art` and the test's `ART` list.
   Generate via treg `replicate.image-gen.nano-banana-pro` — reapi's file host
   is blocked by the home router.
+  Prompting: never ask for "empty space for a caption" — the model draws a
+  flat colour band. Ask for "one continuous photograph with no borders, frames,
+  panels, color bands or split sections" and keep the subject low in frame.
+  Busy tops → `tone: light` (white text + shadow) reads better than dark.
 - The `sites1` container runs as root: `pnpm add`/install can make
   `pnpm-lock.yaml` root-owned — `chown 1000:1000` it after.
 

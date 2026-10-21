@@ -58,3 +58,13 @@ to surface "last AI prompt" per project. Keep entries append-only.
 > (`/dp/attitude/`, lifts its noindex), friends at sunset, strawberry cake,
 > Malayalam nilavilakku (ശുഭദിനം), Arabic mosque at dusk (مساء الخير, generic greeting per governing principle). Attitude
 > copy + FAQ written; Islamic/birthday answers reworded for two pictures.
+
+## 2026-10-21 — v1.H batch 2 (12 pictures)
+
+> Drafted and generated 12 pictures (Replicate nano-banana-pro, $2.70 incl. 6
+> re-rolls for flat caption bands / busy tops). Malayalam ×5 (operator: "fine for
+> now"), unlocking `/good-morning-images/malayalam/`; Christian verses Psalm 46:10
+> and Lamentations 3:22–23; couple hands, good night ×2, motivational, birthday ×2,
+> attitude eagle. No `/dp/islamic/` additions per governing principle. Copy updated in
+> 7 categories for plural pictures. Open: the Malayalam language page reuses the
+> category's copy/FAQ verbatim and has an awkward meta description.
