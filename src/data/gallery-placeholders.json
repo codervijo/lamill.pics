@@ -2,17 +2,6 @@
  "_note": "Planned gallery slots (status: placeholder). Never rendered, never in the sitemap. To publish one: fill every field, add the 1080×1080 WebP at public/images/<category>/<slug>.webp, set status to live and move it into gallery.json.",
  "pictures": [
   {
-   "id": "good-morning-images-todo-01",
-   "category": "good-morning-images",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
    "id": "good-morning-images-todo-02",
    "category": "good-morning-images",
    "status": "placeholder",
@@ -576,17 +565,6 @@
   {
    "id": "dp-todo-30",
    "category": "dp",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "dp-friends-todo-01",
-   "category": "dp/friends",
    "status": "placeholder",
    "language": "",
    "slug": "",
@@ -1223,17 +1201,6 @@
    "tone": ""
   },
   {
-   "id": "dp-islamic-todo-01",
-   "category": "dp/islamic",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
    "id": "dp-islamic-todo-02",
    "category": "dp/islamic",
    "status": "placeholder",
@@ -1861,17 +1828,6 @@
    "tone": ""
   },
   {
-   "id": "birthday-wishes-todo-01",
-   "category": "birthday-wishes",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
    "id": "birthday-wishes-todo-02",
    "category": "birthday-wishes",
    "status": "placeholder",
@@ -2490,17 +2446,6 @@
   {
    "id": "good-night-images-todo-29",
    "category": "good-night-images",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "dp-attitude-todo-01",
-   "category": "dp/attitude",
    "status": "placeholder",
    "language": "",
    "slug": "",

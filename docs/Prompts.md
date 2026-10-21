@@ -48,3 +48,13 @@ to surface "last AI prompt" per project. Keep entries append-only.
 > Open: keyword pull for volume/KD, 3 categories with no query on record,
 > growth-log entry when v1.G deploys.
 
+
+## 2026-10-20 — v1.H art pipeline pilot (5 pictures)
+
+> "How do we add gas to fire to accelerate impressions?" → more pictures. Placed
+> v1.H (art pipeline + gallery fill). Pilot: 5 textless arts via treg (Gemini 3
+> Pro Image on Replicate, $0.15 each; reapi $0.03 generated but its CDN is blocked
+> by the home router), typeset by new `scripts/compose_picture.py`. Added lion
+> (`/dp/attitude/`, lifts its noindex), friends at sunset, strawberry cake,
+> Malayalam nilavilakku (ശുഭദിനം), Arabic mosque at dusk (مساء الخير, generic greeting per governing principle). Attitude
+> copy + FAQ written; Islamic/birthday answers reworded for two pictures.

@@ -1,0 +1,62 @@
+[
+ {
+  "art_src": "art-raw/lion.png",
+  "art_key": "lion",
+  "category": "dp/attitude",
+  "slug": "attitude-dp-lion-born-to-stand-out",
+  "text": "Born to stand out.",
+  "subtitle": "Quiet confidence. Loud results.",
+  "tone": "light",
+  "placement": null,
+  "model": "replicate.image-gen.nano-banana-pro (2K, 1:1)",
+  "prompt": "Photorealistic portrait of a majestic male lion in three-quarter profile, dramatic golden rim light, deep charcoal-to-black background, calm intense gaze, fine detail in the mane. The lion sits in the lower two-thirds of the frame; the top third is clean dark empty space for a caption. Square composition for a WhatsApp profile picture. Absolutely no text, letters, numbers, watermark, signature or logo anywhere."
+ },
+ {
+  "art_src": "art-raw/friends-sunset.png",
+  "art_key": "friends-sunset",
+  "category": "dp/friends",
+  "slug": "friends-group-dp-sunset-same-squad",
+  "text": "Same squad.\nEvery season.",
+  "subtitle": null,
+  "tone": "light",
+  "placement": null,
+  "model": "replicate.image-gen.nano-banana-pro (2K, 1:1)",
+  "prompt": "Photorealistic photo of five young friends seen from behind, sitting together on a grassy hilltop with arms around each other's shoulders, watching a warm orange sunset over hills, soft golden haze, joyful relaxed mood. No faces visible. The upper half is open sky; the bottom quarter is darker grass, kept fairly plain for a caption. Square composition for a WhatsApp group icon. Absolutely no text, letters, numbers, watermark, signature or logo anywhere."
+ },
+ {
+  "art_src": "art-raw/cake.png",
+  "art_key": "cake",
+  "category": "birthday-wishes",
+  "slug": "happy-birthday-cake-candles-smiles",
+  "text": "Happy Birthday",
+  "subtitle": "Wishing you a year full of smiles.",
+  "tone": "dark",
+  "placement": null,
+  "model": "replicate.image-gen.nano-banana-pro (2K, 1:1)",
+  "prompt": "Photorealistic close-up of a two-tier birthday cake with white buttercream, fresh strawberries and pink roses, five lit candles glowing, on a light wooden table, soft pastel pink and cream bokeh background with fairy lights. The cake sits in the lower half of the frame; the top third is soft, light, plain bokeh for a caption. Square composition. Absolutely no text, letters, numbers, writing on the cake, toppers with words, watermark, signature or logo anywhere."
+ },
+ {
+  "art_src": "art-raw/nilavilakku.png",
+  "art_key": "nilavilakku",
+  "category": "good-morning-images",
+  "slug": "shubhadinam-malayalam-good-morning-lamp",
+  "text": "ശുഭദിനം",
+  "subtitle": "ഇന്നത്തെ ദിവസം സന്തോഷം നിറഞ്ഞതാകട്ടെ",
+  "tone": "dark",
+  "placement": null,
+  "model": "replicate.image-gen.nano-banana-pro (2K, 1:1)",
+  "prompt": "Photorealistic photo of a traditional Kerala brass nilavilakku oil lamp with small flames, a string of white jasmine flowers and a few marigolds around its base, on a doorstep at early sunrise, soft warm morning light, blurred green coconut palms behind. The lamp and flowers sit in the lower half of the frame; the top third is soft pale morning sky, plain and light, for a caption. Square composition. Absolutely no text, letters, numbers, watermark, signature or logo anywhere."
+ },
+ {
+  "art_src": "art-raw/mosque-dusk.png",
+  "art_key": "mosque-dusk",
+  "category": "dp/islamic",
+  "slug": "islamic-dp-good-evening-mosque-dusk",
+  "text": "مساء الخير",
+  "subtitle": "Good evening",
+  "tone": "dark",
+  "placement": null,
+  "model": "replicate.image-gen.nano-banana-pro (2K, 1:1)",
+  "prompt": "Photorealistic serene scene of a mosque silhouette with domes and a minaret at dusk, a thin crescent moon in a soft gradient sky from pale gold near the horizon to light teal above, calm water reflecting the mosque in the foreground. The mosque sits in the lower half; the top third is smooth, light, plain sky for a caption. Square composition for a WhatsApp profile picture. Absolutely no text, calligraphy, letters, numbers, watermark, signature or logo anywhere."
+ }
+]

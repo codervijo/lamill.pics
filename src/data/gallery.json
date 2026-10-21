@@ -254,12 +254,12 @@
       "h1": "Islamic DP",
       "title": "Islamic DP for WhatsApp, Free to Download",
       "description": "Islamic DPs for WhatsApp: a calm mosque picture with a short reminder of faith. Free to download, or replace the line with your own dua or greeting.",
-      "answer": "An Islamic DP is a profile picture that reflects your faith: a mosque, a crescent, a short reminder. The picture here is a free square illustration of a mosque beside still water, with the line “Peace begins with faith.” and “Alhamdulillah, always.” underneath. You can keep the wording or replace it with your own.",
+      "answer": "An Islamic DP is a profile picture that reflects your faith: a mosque, a crescent, a short reminder. The pictures here are free and square, with no people in them: a mosque beside still water with “Peace begins with faith.”, and a mosque at dusk with مساء الخير (good evening) in Arabic. You can keep the wording or replace it with your own.",
       "sections": [
         {
           "heading": "A DP with no faces or figures",
           "body": [
-            "Many people choose an Islamic DP because they would rather not use a photo of themselves. This picture has no people in it at all: a mosque with a green dome and tall minarets, its reflection in the water, white blossom in the corners and a small crescent beside the words."
+            "Many people choose an Islamic DP because they would rather not use a photo of themselves. Neither picture here has people in it. One shows a mosque with a green dome and tall minarets reflected in the water, with white blossom in the corners; the other shows a mosque in silhouette at dusk under a thin crescent moon."
           ]
         },
         {
@@ -367,12 +367,12 @@
       "h1": "Birthday Wishes with Name",
       "title": "Birthday Wishes with Name, Free Image",
       "description": "Make a birthday wish with their name on it: type your line onto a cake-and-balloons picture and download it free to send on WhatsApp.",
-      "answer": "To send a birthday wish with a name on it, open the birthday picture here, type the wish including their name, and download it. The picture is a square 1080 × 1080 illustration of a birthday cake with candles, strawberries and balloons. It is free and needs no sign-up.",
+      "answer": "To send a birthday wish with a name on it, open one of the birthday pictures here, type the wish including their name, and download it. There are two square 1080 × 1080 pictures: a cake with candles, strawberries and balloons, and a white strawberry cake with pink roses and lit candles. Both are free and need no sign-up.",
       "sections": [
         {
           "heading": "How the name goes on the birthday picture",
           "body": [
-            "The picture starts with “Happy Birthday!” and a small line underneath. When you type under “Add a name or message”, your text replaces both, so type the whole wish and not only the name: “Happy Birthday, Anu!” or “Happy 60th Birthday, Appa”. You have up to 120 characters, and a longer wish is set smaller so that it fits."
+            "Each picture starts with “Happy Birthday” and a small line underneath. When you type under “Add a name or message”, your text replaces both, so type the whole wish and not only the name: “Happy Birthday, Anu!” or “Happy 60th Birthday, Appa”. You have up to 120 characters, and a longer wish is set smaller so that it fits."
           ]
         },
         {
@@ -484,14 +484,44 @@
       "intro": "Be yourself. Let your picture do the talking.",
       "card": "Bold DPs that say it for you",
       "target": 30,
-      "art": "friends",
+      "art": "lion",
       "query": "attitude dp",
       "h1": "Attitude DP",
       "title": "Attitude DP for WhatsApp",
-      "description": "Attitude DPs for WhatsApp are on the way. Until then, type your own line onto a picture and download it free.",
-      "answer": "There are no ready-made attitude DPs here yet. You can still type your own line below and download it as a square picture.",
-      "sections": [],
-      "faq": [],
+      "description": "Attitude DPs for WhatsApp: bold square pictures with a short, confident line you can keep or replace with your own. Free, no sign-up.",
+      "answer": "An attitude DP is a profile picture that says something about you without a long status: a bold image and a few confident words. The one here is a free square picture of a lion lit gold against black, with “Born to stand out.” on it, and you can replace the line with your own.",
+      "sections": [
+        {
+          "heading": "What makes an attitude DP work at DP size",
+          "body": [
+            "WhatsApp shows your DP as a small circle, so an attitude picture needs one strong subject, a dark or plain background and very few words. The lion picture follows that: the face fills the lower part of the frame and the line sits on clean black above it, where it stays readable."
+          ]
+        },
+        {
+          "heading": "Writing your own attitude line",
+          "body": [
+            "Open the picture and type under “Add a name or message”. Your words replace “Born to stand out.” and the line beneath it. Short and sharp works best: “Less talk. More action.”, a nickname, or a line in Malayalam or Hindi. Whatever you type is set as real text over the art."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Can I download the attitude DP without signing up?",
+          "a": "Yes. Open the picture and download it as a 1080 × 1080 PNG. There is no account and no sign-up."
+        },
+        {
+          "q": "Can I put my own line on the attitude DP?",
+          "a": "Yes. Type it under “Add a name or message” and it replaces the words on the picture. Up to 120 characters is allowed, but two to five words read best in the DP circle."
+        },
+        {
+          "q": "Can I write my attitude line in Malayalam or Hindi?",
+          "a": "Yes. Malayalam, Hindi, Arabic and English are all set as real text, so the letters come out correctly instead of broken."
+        },
+        {
+          "q": "Why does the attitude DP use a lion and not a person?",
+          "a": "A lion reads instantly at small sizes and does not show your face or anyone else’s, so it works if you would rather not post a photo of yourself."
+        }
+      ],
       "generator": {
         "heading": "Say it your way.",
         "example": "My life. My rules."
@@ -773,6 +803,80 @@
       "h1": "Motivational Quote Image: “Small steps.”",
       "description": "“Small steps. Beautiful beginnings.” over a moonlit lake. A free motivational quote image, 1080 × 1080, or put your own quote on it.",
       "about": "“Small steps. Beautiful beginnings.” in pale lettering over a moonlit lake, with mountains behind and white flowers in front. It is a short encouragement for someone starting something: a new job, an exam term, a recovery. Type your own quote to replace it; a short one is set larger."
+    },
+    {
+      "id": "dp-attitude-todo-01",
+      "slug": "attitude-dp-lion-born-to-stand-out",
+      "category": "dp/attitude",
+      "language": "en",
+      "status": "live",
+      "art": "lion",
+      "title": "A lion that owns the room",
+      "text": "Born to stand out.",
+      "subtitle": "Quiet confidence. Loud results.",
+      "tone": "light",
+      "h1": "Attitude DP: Lion, “Born to stand out.”",
+      "description": "A golden-lit lion on a black background with “Born to stand out.” and “Quiet confidence. Loud results.” A free attitude DP for WhatsApp.",
+      "about": "A lion in three-quarter profile, lit gold from one side against a near-black background, looking past the camera. Above it, in white: “Born to stand out.” with “Quiet confidence. Loud results.” underneath. The dark background keeps the words sharp even in the small DP circle. Type your own line and it replaces both."
+    },
+    {
+      "id": "dp-friends-todo-01",
+      "slug": "friends-group-dp-sunset-same-squad",
+      "category": "dp/friends",
+      "language": "en",
+      "status": "live",
+      "art": "friends-sunset",
+      "title": "Five friends at sunset",
+      "text": "Same squad.\nEvery season.",
+      "tone": "light",
+      "h1": "Friends Group DP: “Same squad. Every season.”",
+      "description": "Five friends seen from behind on a hilltop at sunset, with “Same squad. Every season.” A free friends group DP for WhatsApp, no faces shown.",
+      "about": "Five friends sit on a grassy hilltop with their arms around each other’s shoulders, seen from behind, watching an orange sunset over the hills. No faces are visible, so it can stand for any group. It reads “Same squad. Every season.” Type your group’s name and it replaces the words."
+    },
+    {
+      "id": "birthday-wishes-todo-01",
+      "slug": "happy-birthday-cake-candles-smiles",
+      "category": "birthday-wishes",
+      "language": "en",
+      "status": "live",
+      "art": "cake",
+      "title": "Strawberry cake with candles",
+      "text": "Happy Birthday",
+      "subtitle": "Wishing you a year full of smiles.",
+      "tone": "dark",
+      "h1": "Birthday Wish with Name: Strawberry Cake",
+      "description": "A white birthday cake with strawberries, pink roses and lit candles. Type “Happy Birthday” with their name and download it free.",
+      "about": "A two-tier white cake topped with strawberries and pink roses, with lit candles, on a wooden table in front of soft pink lights. It reads “Happy Birthday” with “Wishing you a year full of smiles.” underneath. Type the whole wish with their name, such as “Happy 50th, Appa!”, and it replaces both lines."
+    },
+    {
+      "id": "good-morning-images-todo-01",
+      "slug": "shubhadinam-malayalam-good-morning-lamp",
+      "category": "good-morning-images",
+      "language": "ml",
+      "status": "live",
+      "art": "nilavilakku",
+      "title": "Nilavilakku lamp at sunrise",
+      "text": "ശുഭദിനം",
+      "subtitle": "ഇന്നത്തെ ദിവസം സന്തോഷം നിറഞ്ഞതാകട്ടെ",
+      "tone": "dark",
+      "h1": "Malayalam Good Morning Image: Nilavilakku",
+      "description": "A brass nilavilakku with jasmine and marigolds at sunrise, with ശുഭദിനം (have a good day). A free Malayalam good morning image.",
+      "about": "A traditional brass nilavilakku burns on a doorstep at sunrise, ringed with jasmine and marigolds, with coconut palms soft behind it. The greeting ശുഭദിനം (have a good day) sits above ഇന്നത്തെ ദിവസം സന്തോഷം നിറഞ്ഞതാകട്ടെ, “may today be full of happiness.” Type your own line in Malayalam or English and it replaces both."
+    },
+    {
+      "id": "dp-islamic-todo-01",
+      "slug": "islamic-dp-good-evening-mosque-dusk",
+      "category": "dp/islamic",
+      "language": "ar",
+      "status": "live",
+      "art": "mosque-dusk",
+      "title": "Mosque at dusk, good evening",
+      "text": "مساء الخير",
+      "subtitle": "Good evening",
+      "tone": "dark",
+      "h1": "Islamic DP: مساء الخير, Mosque at Dusk",
+      "description": "A mosque silhouette and crescent moon at dusk with مساء الخير (good evening) in Arabic. A free DP for WhatsApp, no people shown.",
+      "about": "A mosque with domes and a single minaret stands in silhouette against a sky fading from gold to soft teal, mirrored in still water, with a thin crescent moon above. مساء الخير, “good evening”, is set in real Arabic script, right to left, with “Good evening” beneath it. There are no people in the picture."
     }
   ]
 }

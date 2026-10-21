@@ -9,7 +9,7 @@ import { assertNoPathCollisions, categoryPath, categoryPictures, catalogCategori
 import { galleryGaps } from '../lib/catalog-report';
 import { detectLanguage } from '../lib/track';
 
-const ART = ['flowers', 'friends', 'islamic', 'birthday', 'couple', 'night', 'sunrise', 'tea'];
+const ART = ['flowers', 'friends', 'islamic', 'birthday', 'couple', 'night', 'sunrise', 'tea', 'lion', 'friends-sunset', 'cake', 'nilavilakku', 'mosque-dusk'];
 
 describe('gallery data', () => {
   it('every live picture is complete and its WebP exists at the stable path', () => {

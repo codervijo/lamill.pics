@@ -28,6 +28,13 @@ Key mechanics (non-obvious from a skim):
   build time (`og:image` + no-JS download).
 - Portfolio SEO checks (CHECK_075/076) parse `src/pages/index.astro` *source*,
   so tags there must be literal, not emitted by a component.
+- New art (v1.H): `scripts/compose_picture.py <spec.json>` (`uv run`) typesets
+  text over textless art, mirroring `picture-export.ts`, and writes
+  `src/assets/<art>.jpg` + `public/images/<category>/<slug>.webp`. Specs with
+  prompts live in `scripts/specs/`; raw 2K PNGs in `art-raw/` (gitignored).
+  A new art key also goes in `pics.ts` `art` and the test's `ART` list.
+  Generate via treg `replicate.image-gen.nano-banana-pro` — reapi's file host
+  is blocked by the home router.
 - The `sites1` container runs as root: `pnpm add`/install can make
   `pnpm-lock.yaml` root-owned — `chown 1000:1000` it after.
 
@@ -94,8 +101,8 @@ future Claude sessions don't re-propose them.>
   on the category.
 - **2026-10-06 — No style filter yet.** It needs a `style` field in
   `gallery.json` first.
-- **2026-10-06 — Art-less categories are `noindex, follow`** (today
-  `/dp/attitude/`) and out of the sitemap. This lifts automatically when art lands.
+- **2026-10-06 — Art-less categories are `noindex, follow`** (none today;
+  `/dp/attitude/` got art in v1.H) and out of the sitemap. This lifts automatically when art lands.
 - **2026-10-11 — Category copy names specific pictures.** Single-image
   categories describe their one picture ("The picture here shows…"). Reword
   when more art lands in that category.

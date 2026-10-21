@@ -6,10 +6,15 @@ import coupleImage from '@/assets/couple.jpg';
 import nightImage from '@/assets/night.jpg';
 import sunriseImage from '@/assets/sunrise.jpg';
 import teaImage from '@/assets/tea.jpg';
+import lionImage from '@/assets/lion.jpg';
+import friendsSunsetImage from '@/assets/friends-sunset.jpg';
+import cakeImage from '@/assets/cake.jpg';
+import nilavilakkuImage from '@/assets/nilavilakku.jpg';
+import mosqueDuskImage from '@/assets/mosque-dusk.jpg';
 import { altText, captionText, catalogCategories, catalogPictures, imagePath, type CatalogCategory, type CatalogPicture, type Language } from './catalog';
 
 // Background art (site assets, Astro-hashed) — live text is typeset over these.
-export const art: Record<string, string> = { flowers: flowersImage.src, friends: friendsImage.src, islamic: islamicImage.src, birthday: birthdayImage.src, couple: coupleImage.src, night: nightImage.src, sunrise: sunriseImage.src, tea: teaImage.src };
+export const art: Record<string, string> = { flowers: flowersImage.src, friends: friendsImage.src, islamic: islamicImage.src, birthday: birthdayImage.src, couple: coupleImage.src, night: nightImage.src, sunrise: sunriseImage.src, tea: teaImage.src, lion: lionImage.src, 'friends-sunset': friendsSunsetImage.src, cake: cakeImage.src, nilavilakku: nilavilakkuImage.src, 'mosque-dusk': mosqueDuskImage.src };
 
 export type Picture = { id: string; src: string; title: string; text: string; subtitle?: string | undefined; category: string; tone: 'light' | 'dark'; placement?: 'top' | 'bottom'; variant?: number; file?: string; slug?: string; language?: Language; alt?: string; caption?: string; h1?: string; description?: string; about?: string };
 export type Category = Omit<CatalogCategory, 'art' | 'target'> & { image: string };
