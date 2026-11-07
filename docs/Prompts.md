@@ -68,3 +68,16 @@ to surface "last AI prompt" per project. Keep entries append-only.
 > attitude eagle. No `/dp/islamic/` additions per governing principle. Copy updated in
 > 7 categories for plural pictures. Open: the Malayalam language page reuses the
 > category's copy/FAQ verbatim and has an awkward meta description.
+
+## 2026-11-06 — growth reviews, keyword pull, v1.I queued, v1.H batch 3
+
+> "What's next" → overdue growth reviews + "use treg to expand search surface".
+> GSC 28d: web 1,238 imp / 4 clicks; **image search 5,754 imp / 7 clicks**
+> (pos ~47, not counted by the portfolio CLI); 8/10 indexed; GA not live.
+> SE Ranking keyword pull via treg ($0.82): most category head terms KD > 20;
+> KD ≤ 20 clusters in Christian/God good morning, good night, couple, family
+> group, birthday-with-name. Operator chose option 3: v1.I (search surface)
+> queued; batch 3 now. 12 pictures (nano-banana-pro, $2.55 incl. 5 re-rolls):
+> God bless / Jesus loves you / Proverbs 3:5 / Malayalam church blessing;
+> good night God bless / I love you / Psalm 4:8 / Malayalam blessing; couple
+> Us. / Forever yours / swings / You are my home. Copy updated in 3 categories.

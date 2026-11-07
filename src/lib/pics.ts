@@ -23,10 +23,22 @@ import hikerDawnImage from '@/assets/hiker-dawn.jpg';
 import balloonsGiftImage from '@/assets/balloons-gift.jpg';
 import cupcakeImage from '@/assets/cupcake.jpg';
 import eagleImage from '@/assets/eagle.jpg';
+import godBlessFieldImage from '@/assets/god-bless-field.jpg';
+import hillCrossDawnImage from '@/assets/hill-cross-dawn.jpg';
+import bibleCoffeeImage from '@/assets/bible-coffee.jpg';
+import keralaChurchDawnImage from '@/assets/kerala-church-dawn.jpg';
+import lanternWindowImage from '@/assets/lantern-window.jpg';
+import moonLakeImage from '@/assets/moon-lake.jpg';
+import moonlitMeadowImage from '@/assets/moonlit-meadow.jpg';
+import paddyNightImage from '@/assets/paddy-night.jpg';
+import latteHeartsImage from '@/assets/latte-hearts.jpg';
+import beachSunsetCoupleImage from '@/assets/beach-sunset-couple.jpg';
+import twoSwingsImage from '@/assets/two-swings.jpg';
+import rainMugsImage from '@/assets/rain-mugs.jpg';
 import { altText, captionText, catalogCategories, catalogPictures, imagePath, type CatalogCategory, type CatalogPicture, type Language } from './catalog';
 
 // Background art (site assets, Astro-hashed) — live text is typeset over these.
-export const art: Record<string, string> = { flowers: flowersImage.src, friends: friendsImage.src, islamic: islamicImage.src, birthday: birthdayImage.src, couple: coupleImage.src, night: nightImage.src, sunrise: sunriseImage.src, tea: teaImage.src, lion: lionImage.src, 'friends-sunset': friendsSunsetImage.src, cake: cakeImage.src, nilavilakku: nilavilakkuImage.src, 'mosque-dusk': mosqueDuskImage.src, 'backwaters-boat': backwatersBoatImage.src, 'tea-tumbler': teaTumblerImage.src, hibiscus: hibiscusImage.src, 'misty-forest': mistyForestImage.src, 'lake-dock': lakeDockImage.src, 'couple-hands-tea': coupleHandsTeaImage.src, 'village-night': villageNightImage.src, 'moon-palms': moonPalmsImage.src, 'hiker-dawn': hikerDawnImage.src, 'balloons-gift': balloonsGiftImage.src, cupcake: cupcakeImage.src, eagle: eagleImage.src };
+export const art: Record<string, string> = { flowers: flowersImage.src, friends: friendsImage.src, islamic: islamicImage.src, birthday: birthdayImage.src, couple: coupleImage.src, night: nightImage.src, sunrise: sunriseImage.src, tea: teaImage.src, lion: lionImage.src, 'friends-sunset': friendsSunsetImage.src, cake: cakeImage.src, nilavilakku: nilavilakkuImage.src, 'mosque-dusk': mosqueDuskImage.src, 'backwaters-boat': backwatersBoatImage.src, 'tea-tumbler': teaTumblerImage.src, hibiscus: hibiscusImage.src, 'misty-forest': mistyForestImage.src, 'lake-dock': lakeDockImage.src, 'couple-hands-tea': coupleHandsTeaImage.src, 'village-night': villageNightImage.src, 'moon-palms': moonPalmsImage.src, 'hiker-dawn': hikerDawnImage.src, 'balloons-gift': balloonsGiftImage.src, cupcake: cupcakeImage.src, eagle: eagleImage.src, 'god-bless-field': godBlessFieldImage.src, 'hill-cross-dawn': hillCrossDawnImage.src, 'bible-coffee': bibleCoffeeImage.src, 'kerala-church-dawn': keralaChurchDawnImage.src, 'lantern-window': lanternWindowImage.src, 'moon-lake': moonLakeImage.src, 'moonlit-meadow': moonlitMeadowImage.src, 'paddy-night': paddyNightImage.src, 'latte-hearts': latteHeartsImage.src, 'beach-sunset-couple': beachSunsetCoupleImage.src, 'two-swings': twoSwingsImage.src, 'rain-mugs': rainMugsImage.src };
 
 export type Picture = { id: string; src: string; title: string; text: string; subtitle?: string | undefined; category: string; tone: 'light' | 'dark'; placement?: 'top' | 'bottom'; variant?: number; file?: string; slug?: string; language?: Language; alt?: string; caption?: string; h1?: string; description?: string; about?: string };
 export type Category = Omit<CatalogCategory, 'art' | 'target'> & { image: string };

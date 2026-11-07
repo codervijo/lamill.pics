@@ -57,13 +57,13 @@ https://search.google.com/search-console directly.
 ---
 
 ## 2026-10-06 — Search demand for ready-made DP and greeting images is enormous and…
-- **Status:** active
+- **Status:** shipped (search leg) — conversion leg unmeasured, re-review once GA is live
 - **Hypothesis:** Search demand for ready-made DP and greeting images is enormous and served by weak sites (KD 0 on queries like "dp for whatsapp," "islamic dp," "attitude dp" and "good morning images"), while create-intent queries like "happy birthday cake with name" and "birthday wishes with photo" are also low-difficulty. A site with a steady supply of original, well-typeset, multilingual images, each one personalizable in a single tap, can outrank existing galleries and convert some browsers into creators. Growth comes from Google and Google Images first, then from WhatsApp shares of personalized images, especially group icons and occasion wishes seen by whole groups. The hypothesis fails if pages aren't indexed or impressions stay flat after 6 weeks, or if under 3% of visitors personalize or generate. That would make this a pure ad-supported gallery rather than a product.
 - **KPI:** any GSC traffic — clicks, impressions, indexed-page count
 - **Baseline:** 0 clicks / 0 impressions (just deployed)
 - **Action:** project scaffolded via `portfolio new bootstrap`; first deploy pending. After deploy: verify in GSC as `sc-domain:lamill.pics` and submit the sitemap.
-- **Result:** TBD — review 2026-11-03
-- **Learning:** TBD
+- **Result:** (reviewed 2026-11-06; GSC 28d window 2026-10-06 → 2026-11-03) Web: 1,238 impressions, 4 clicks, avg position 6.1. **Image search: 5,754 impressions, 7 clicks, avg position 47.2** — 4.6× the web figure, and not counted by `portfolio project seo` (web-only). 8/10 inspected URLs indexed; 44 URLs in the sitemap. 723 of 1,238 web impressions are from India. Conversion KPI (≥ 3% personalize) **not measurable**: `PUBLIC_GA_ID` is unset, no GA tag on the live site.
+- **Learning:** The search half holds: pages get indexed and impressions grew from 0 with no backlinks. Demand showed up where KD is low, not on the head terms: web impressions come from long-tail Christian and Malayalam good-morning queries ("christian good morning images" 60, "സുപ്രഭാതം ചിത്രങ്ങള് മലയാളം" 46, "good morning amma images" 29 at pos 1.7). Image search is the bigger channel but sits at page 4–5 (pos ~45); `/dp/couple/` (1,399) and the Islamic picture page (1,141) lead it. The product half can't be judged until GA is on. CTR (0.3% web) is the next lever after impressions.
 
 ## 2026-10-06 — Stable image URLs + per-image landing pages get gallery images indexed in Google Images
 - **Status:** active
@@ -71,8 +71,8 @@ https://search.google.com/search-console directly.
 - **KPI:** GSC indexed-page count (target: the 14 picture pages); GSC impressions with search type = Image; CHECK_147 indexed ratio
 - **Baseline:** 0/10 top URLs indexed (CHECK_147, 2026-10-06); 0 impressions
 - **Action:** v1.B–v1.E (PRD): stable image paths, 14 picture pages, JPEG og:image, `<image:image>` sitemap entries, crawlable language-filter links, analytics events.
-- **Result:** TBD — review 2026-11-03
-- **Learning:** TBD
+- **Result:** (reviewed 2026-11-06; GSC 28d to 2026-11-03) Indexed ratio 0/10 → 8/10 inspected URLs. Image search: 5,754 impressions, 7 clicks, avg position 47.2, across 16 pages — 12 of them picture pages. Top image pages: `/dp/couple/` 1,399, `/dp/islamic/islamic-dp-peace-begins-with-faith/` 1,141, `/good-morning-images/good-morning-flowers-fresh-start/` 837, `/dp/friends/friends-group-dp-our-kind-of-crazy/` 517, `/dp/english/` 500. Still `discovered_not_indexed`: `/birthday-wishes/` and `/birthday-wishes/happy-birthday-wishes-flowers/`.
+- **Learning:** Worked. Stable URLs + per-picture pages put images into Google Images within 4 weeks, and single pictures (not just category pages) pull image impressions. Position ~45 means page 4–5 of image results: impressions are real but clicks need better rank. More pictures on the queries already drawing image impressions (couple / family group DP) is the obvious next bet. `/birthday-wishes/` is the one cluster Google hasn't crawled — worth a home-page link check.
 
 ## 2026-10-11 — Page-specific copy and FAQ get the thin gallery pages crawled, indexed and shown
 - **Status:** active

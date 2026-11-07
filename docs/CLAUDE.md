@@ -39,6 +39,11 @@ Key mechanics (non-obvious from a skim):
   flat colour band. Ask for "one continuous photograph with no borders, frames,
   panels, color bands or split sections" and keep the subject low in frame.
   Busy tops → `tone: light` (white text + shadow) reads better than dark.
+  The model can still draw a white band at the top despite "no borders": say
+  the sky "fills the whole upper part right up to the top edge". Keep moons,
+  window bars and branches out of the top third (they collide with the text).
+  If the `treg` CLI says `invalid token`, submit via the treg MCP `call` and poll
+  `replicate.predictions.get` (no charge for polling).
 - The `sites1` container runs as root: `pnpm add`/install can make
   `pnpm-lock.yaml` root-owned — `chown 1000:1000` it after.
 
