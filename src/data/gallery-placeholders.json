@@ -2,28 +2,6 @@
  "_note": "Planned gallery slots (status: placeholder). Never rendered, never in the sitemap. To publish one: fill every field, add the 1080×1080 WebP at public/images/<category>/<slug>.webp, set status to live and move it into gallery.json.",
  "pictures": [
   {
-   "id": "good-morning-images-todo-05",
-   "category": "good-morning-images",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "good-morning-images-todo-06",
-   "category": "good-morning-images",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
    "id": "good-morning-images-todo-07",
    "category": "good-morning-images",
    "status": "placeholder",
@@ -541,72 +519,6 @@
    "tone": ""
   },
   {
-   "id": "dp-friends-todo-02",
-   "category": "dp/friends",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "dp-friends-todo-03",
-   "category": "dp/friends",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "dp-friends-todo-04",
-   "category": "dp/friends",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "dp-friends-todo-05",
-   "category": "dp/friends",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "dp-friends-todo-06",
-   "category": "dp/friends",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "dp-friends-todo-07",
-   "category": "dp/friends",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
    "id": "dp-friends-todo-08",
    "category": "dp/friends",
    "status": "placeholder",
@@ -840,50 +752,6 @@
   {
    "id": "dp-friends-todo-29",
    "category": "dp/friends",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "dp-couple-todo-06",
-   "category": "dp/couple",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "dp-couple-todo-07",
-   "category": "dp/couple",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "dp-couple-todo-08",
-   "category": "dp/couple",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "dp-couple-todo-09",
-   "category": "dp/couple",
    "status": "placeholder",
    "language": "",
    "slug": "",
@@ -1421,50 +1289,6 @@
    "tone": ""
   },
   {
-   "id": "christian-good-morning-todo-07",
-   "category": "christian/good-morning",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "christian-good-morning-todo-08",
-   "category": "christian/good-morning",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "christian-good-morning-todo-09",
-   "category": "christian/good-morning",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "christian-good-morning-todo-10",
-   "category": "christian/good-morning",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
    "id": "christian-good-morning-todo-11",
    "category": "christian/good-morning",
    "status": "placeholder",
@@ -1665,50 +1489,6 @@
   {
    "id": "christian-good-morning-todo-29",
    "category": "christian/good-morning",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "birthday-wishes-todo-04",
-   "category": "birthday-wishes",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "birthday-wishes-todo-05",
-   "category": "birthday-wishes",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "birthday-wishes-todo-06",
-   "category": "birthday-wishes",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "birthday-wishes-todo-07",
-   "category": "birthday-wishes",
    "status": "placeholder",
    "language": "",
    "slug": "",
@@ -1951,50 +1731,6 @@
   {
    "id": "birthday-wishes-todo-29",
    "category": "birthday-wishes",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "good-night-images-todo-07",
-   "category": "good-night-images",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "good-night-images-todo-08",
-   "category": "good-night-images",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "good-night-images-todo-09",
-   "category": "good-night-images",
-   "status": "placeholder",
-   "language": "",
-   "slug": "",
-   "art": "",
-   "title": "",
-   "text": "",
-   "tone": ""
-  },
-  {
-   "id": "good-night-images-todo-10",
-   "category": "good-night-images",
    "status": "placeholder",
    "language": "",
    "slug": "",

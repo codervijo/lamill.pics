@@ -7,7 +7,7 @@ import SocialImage from '../components/SocialImage.astro';
 import { CategoryPage, PicturePage } from '../components/pics/experience';
 import { categories, catalog, type Category, type Picture } from '../lib/pics';
 import { galleryFor } from '../lib/gallery-data';
-import { assertNoPathCollisions, catalogPictures, imagePath, jpegPath, languagePages, languagePath, pageTitle, parentCategory, relatedPictures, LANGUAGES, SITE, type Language } from '../lib/catalog';
+import { assertNoPathCollisions, catalogPictures, imagePath, jpegPath, languagePages, languagePath, ownCanonical, pageTitle, parentCategory, relatedPictures, LANGUAGES, SITE, type Language } from '../lib/catalog';
 
 export function getStaticPaths() {
   assertNoPathCollisions();
@@ -32,9 +32,11 @@ const props = Astro.props as Props;
 const { category } = props;
 const gallery = galleryFor(category.slug).filter((p) => props.kind !== 'language' || p.language === props.language);
 const lead = props.kind === 'picture' ? props.picture : gallery[0];
-const canonical = props.kind === 'picture' ? `${SITE}/${category.slug}/${props.picture.slug}/`
+const pageUrl = props.kind === 'picture' ? `${SITE}/${category.slug}/${props.picture.slug}/`
   : props.kind === 'language' ? SITE + languagePath(category.slug, props.language)
   : `${SITE}/${category.slug}/`;
+// English language pages point at their category (see ownCanonical in catalog.ts).
+const canonical = props.kind === 'language' && !ownCanonical(props.language) ? `${SITE}/${category.slug}/` : pageUrl;
 const heading = props.kind === 'picture' ? props.picture.h1!
   : props.kind === 'language' ? `${category.h1} in ${LANGUAGES[props.language].name}`
   : category.h1;
@@ -55,8 +57,8 @@ const trail = [
   { name: 'Home', item: `${SITE}/` },
   ...(parent ? [{ name: parent.name, item: `${SITE}/${parent.slug}/` }] : []),
   { name: category.name, item: `${SITE}/${category.slug}/` },
-  ...(props.kind === 'language' ? [{ name: LANGUAGES[props.language].name, item: canonical }] : []),
-  ...(props.kind === 'picture' ? [{ name: props.picture.title, item: canonical }] : []),
+  ...(props.kind === 'language' ? [{ name: LANGUAGES[props.language].name, item: pageUrl }] : []),
+  ...(props.kind === 'picture' ? [{ name: props.picture.title, item: pageUrl }] : []),
 ];
 const breadcrumb = {
   '@type': 'BreadcrumbList',
@@ -67,9 +69,9 @@ const faq = props.kind === 'category' ? category.faq : [];
 const graph = props.kind === 'picture' ? [
   {
     '@type': 'ImageObject',
-    '@id': `${canonical}#image`,
+    '@id': `${pageUrl}#image`,
     contentUrl: new URL(props.picture.file!, SITE).href,
-    url: canonical,
+    url: pageUrl,
     name: heading,
     caption: props.picture.caption ?? props.picture.title,
     description: props.picture.alt,
@@ -84,8 +86,8 @@ const graph = props.kind === 'picture' ? [
 ] : [
   {
     '@type': 'CollectionPage',
-    '@id': `${canonical}#collection`,
-    url: canonical,
+    '@id': `${pageUrl}#collection`,
+    url: pageUrl,
     name: heading,
     description,
     inLanguage: [...new Set(gallery.map((p) => p.language).filter(Boolean))],
@@ -95,7 +97,7 @@ const graph = props.kind === 'picture' ? [
   breadcrumb,
   ...(faq.length ? [{
     '@type': 'FAQPage',
-    '@id': `${canonical}#faq`,
+    '@id': `${pageUrl}#faq`,
     mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
   }] : []),
 ];
@@ -116,6 +118,6 @@ const jsonLd = JSON.stringify({ '@context': 'https://schema.org', '@graph': grap
     <script type="application/ld+json" set:html={jsonLd} />
   </Fragment>
   {props.kind === 'picture'
-    ? <PicturePage client:load picture={props.picture} category={category} related={props.related} url={canonical} jpeg={jpegPath({ category: category.slug, slug: props.picture.slug! })} />
+    ? <PicturePage client:load picture={props.picture} category={category} related={props.related} url={pageUrl} jpeg={jpegPath({ category: category.slug, slug: props.picture.slug! })} />
     : <CategoryPage client:load category={category} language={props.kind === 'language' ? props.language : undefined} />}
 </Layout>

@@ -60,6 +60,13 @@ export const categoryLanguages = (slug: string): Language[] =>
 export const languagePages = (slug: string): Language[] =>
  categoryLanguages(slug).filter(l => categoryPictures(slug).filter(p => p.language === l).length >= MIN_LANGUAGE_PAGE);
 export const languagePath = (slug: string, l: Language) => `/${slug}/${LANGUAGES[l].slug}/`;
+// English is the default, not a search modifier: an English language page
+// repeats its category's copy, so it canonicalises to the category and stays
+// out of the sitemap (operator decision 2026-11-07; own copy per language page
+// is v1.J). Other languages ("… malayalam") are real queries and keep their own.
+export const ownCanonical = (l: Language) => l !== 'en';
+export const nonCanonicalLanguagePaths = () => new Set(catalogCategories.flatMap(c =>
+ languagePages(c.slug).filter(l => !ownCanonical(l)).map(l => languagePath(c.slug, l))));
 
 export const BRAND = 'LaMill Pics';
 export const pageTitle = (t: string) => `${t} — ${BRAND}`;
@@ -102,7 +109,7 @@ export function assertNoPathCollisions(): void {
 export function sitemapImages(): Map<string, string[]> {
  const map = new Map<string, string[]>();
  for (const c of catalogCategories) map.set(categoryPath(c.slug), categoryPictures(c.slug).map(p => SITE + imagePath(p)));
- for (const c of catalogCategories) for (const l of languagePages(c.slug)) map.set(languagePath(c.slug, l), categoryPictures(c.slug).filter(p => p.language === l).map(p => SITE + imagePath(p)));
+ for (const c of catalogCategories) for (const l of languagePages(c.slug).filter(ownCanonical)) map.set(languagePath(c.slug, l), categoryPictures(c.slug).filter(p => p.language === l).map(p => SITE + imagePath(p)));
  for (const p of catalogPictures) map.set(picturePath(p), [SITE + imagePath(p)]);
  return map;
 }

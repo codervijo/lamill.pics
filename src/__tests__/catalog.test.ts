@@ -5,11 +5,11 @@ import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import data from '../data/gallery.json';
 import planned from '../data/gallery-placeholders.json';
-import { assertNoPathCollisions, categoryPath, categoryPictures, catalogCategories, catalogPictures, imagePath, inCategory, jpegPath, pageTitle, parentCategory, picturePath, relatedCategories, relatedPictures, sitemapImages, LANGUAGES } from '../lib/catalog';
+import { assertNoPathCollisions, categoryPath, categoryPictures, catalogCategories, catalogPictures, imagePath, inCategory, jpegPath, languagePages, languagePath, nonCanonicalLanguagePaths, pageTitle, parentCategory, picturePath, relatedCategories, relatedPictures, sitemapImages, LANGUAGES } from '../lib/catalog';
 import { galleryGaps } from '../lib/catalog-report';
 import { detectLanguage } from '../lib/track';
 
-const ART = ['flowers', 'friends', 'islamic', 'birthday', 'couple', 'night', 'sunrise', 'tea', 'lion', 'friends-sunset', 'cake', 'nilavilakku', 'mosque-dusk', 'backwaters-boat', 'tea-tumbler', 'hibiscus', 'misty-forest', 'lake-dock', 'couple-hands-tea', 'village-night', 'moon-palms', 'hiker-dawn', 'balloons-gift', 'cupcake', 'eagle', 'god-bless-field', 'hill-cross-dawn', 'bible-coffee', 'kerala-church-dawn', 'lantern-window', 'moon-lake', 'moonlit-meadow', 'paddy-night', 'latte-hearts', 'beach-sunset-couple', 'two-swings', 'rain-mugs'];
+const ART = ['flowers', 'friends', 'islamic', 'birthday', 'couple', 'night', 'sunrise', 'tea', 'lion', 'friends-sunset', 'cake', 'nilavilakku', 'mosque-dusk', 'backwaters-boat', 'tea-tumbler', 'hibiscus', 'misty-forest', 'lake-dock', 'couple-hands-tea', 'village-night', 'moon-palms', 'hiker-dawn', 'balloons-gift', 'cupcake', 'eagle', 'god-bless-field', 'hill-cross-dawn', 'bible-coffee', 'kerala-church-dawn', 'lantern-window', 'moon-lake', 'moonlit-meadow', 'paddy-night', 'latte-hearts', 'beach-sunset-couple', 'two-swings', 'rain-mugs', 'three-friends-hill', 'four-sneakers', 'five-hands', 'girls-beach', 'friends-jump-sunset', 'campfire-friends', 'two-bicycles', 'rain-umbrella-couple', 'heart-hands-sunset', 'lovebirds-branch', 'rose-balcony-night', 'harbour-night', 'kerala-courtyard-night', 'mountain-lake-stars', 'mountain-eagle-dawn', 'lighthouse-dawn', 'window-flowers-sunrise', 'kerala-sunrise-paddy', 'chocolate-cake-sparklers', 'gift-confetti', 'bouquet-balloons', 'cupcake-row', 'munnar-tea-sunrise', 'jasmine-dew'];
 
 describe('gallery data', () => {
   it('every live picture is complete and its WebP exists at the stable path', () => {
@@ -39,6 +39,17 @@ describe('gallery data', () => {
   });
   it('each category is planned up to its target', () => {
     for (const g of galleryGaps()) expect(g.live + g.placeholders, g.slug).toBe(g.target);
+  });
+});
+
+describe('English language pages', () => {
+  it('canonicalise to their category and stay out of the image sitemap', () => {
+    const off = nonCanonicalLanguagePaths(); const sm = sitemapImages();
+    for (const c of catalogCategories) for (const l of languagePages(c.slug)) {
+      const path = languagePath(c.slug, l);
+      expect(off.has(path)).toBe(l === 'en');
+      expect(sm.has(path)).toBe(l !== 'en');
+    }
   });
 });
 

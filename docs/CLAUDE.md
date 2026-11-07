@@ -33,6 +33,11 @@ Key mechanics (non-obvious from a skim):
   `src/assets/<art>.jpg` + `public/images/<category>/<slug>.webp`. Specs with
   prompts live in `scripts/specs/`; raw 2K PNGs in `art-raw/` (gitignored).
   A new art key also goes in `pics.ts` `art` and the test's `ART` list.
+  Batches: `uv run scripts/gen_batch.py scripts/specs/<spec>.json --dry-run`,
+  then `--max-cost <worst case>`; spec entries give `scene` (the shared
+  composition rules are appended) and cached art in `art-raw/` is reused, so
+  text, tone or slug fixes re-compose for $0 (`--only <key>`). No per-site
+  review sheet: that belongs in the shared pipeline (PRD v2).
   Generate via treg `replicate.image-gen.nano-banana-pro` — reapi's file host
   is blocked by the home router.
   Prompting: never ask for "empty space for a caption" — the model draws a
@@ -115,6 +120,15 @@ future Claude sessions don't re-propose them.>
 - **2026-10-11 — Category copy names specific pictures.** Single-image
   categories describe their one picture ("The picture here shows…"). Reword
   when more art lands in that category.
+- **2026-11-06 — Category copy describes themes + a count, not every picture**
+  (operator-approved; reverses the 2026-10-11 entry above for categories as
+  they're touched). At 24 pictures per run, naming each picture in the answer
+  and FAQ means rewriting them every batch. Picture pages keep their own
+  unique copy.
+- **2026-11-07 — English language pages aren't indexed on their own.**
+  `/<category>/english/` repeats the category's copy, so its canonical is the
+  category and it is left out of the sitemap. Malayalam / Hindi / Arabic pages
+  keep their own canonical. Revisit when v1.J gives language pages own copy.
 - **Known, unfixed (pre-existing):** generated "choices" on the home and
   category generators show the source picture's baked WebP (original text),
   not the prompt text. `mockGenerate` keeps `file`; fixing it changes the visuals.

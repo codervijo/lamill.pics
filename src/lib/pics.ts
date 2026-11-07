@@ -35,10 +35,34 @@ import latteHeartsImage from '@/assets/latte-hearts.jpg';
 import beachSunsetCoupleImage from '@/assets/beach-sunset-couple.jpg';
 import twoSwingsImage from '@/assets/two-swings.jpg';
 import rainMugsImage from '@/assets/rain-mugs.jpg';
+import threeFriendsHillImage from '@/assets/three-friends-hill.jpg';
+import fourSneakersImage from '@/assets/four-sneakers.jpg';
+import fiveHandsImage from '@/assets/five-hands.jpg';
+import girlsBeachImage from '@/assets/girls-beach.jpg';
+import friendsJumpSunsetImage from '@/assets/friends-jump-sunset.jpg';
+import campfireFriendsImage from '@/assets/campfire-friends.jpg';
+import twoBicyclesImage from '@/assets/two-bicycles.jpg';
+import rainUmbrellaCoupleImage from '@/assets/rain-umbrella-couple.jpg';
+import heartHandsSunsetImage from '@/assets/heart-hands-sunset.jpg';
+import lovebirdsBranchImage from '@/assets/lovebirds-branch.jpg';
+import roseBalconyNightImage from '@/assets/rose-balcony-night.jpg';
+import harbourNightImage from '@/assets/harbour-night.jpg';
+import keralaCourtyardNightImage from '@/assets/kerala-courtyard-night.jpg';
+import mountainLakeStarsImage from '@/assets/mountain-lake-stars.jpg';
+import mountainEagleDawnImage from '@/assets/mountain-eagle-dawn.jpg';
+import lighthouseDawnImage from '@/assets/lighthouse-dawn.jpg';
+import windowFlowersSunriseImage from '@/assets/window-flowers-sunrise.jpg';
+import keralaSunrisePaddyImage from '@/assets/kerala-sunrise-paddy.jpg';
+import chocolateCakeSparklersImage from '@/assets/chocolate-cake-sparklers.jpg';
+import giftConfettiImage from '@/assets/gift-confetti.jpg';
+import bouquetBalloonsImage from '@/assets/bouquet-balloons.jpg';
+import cupcakeRowImage from '@/assets/cupcake-row.jpg';
+import munnarTeaSunriseImage from '@/assets/munnar-tea-sunrise.jpg';
+import jasmineDewImage from '@/assets/jasmine-dew.jpg';
 import { altText, captionText, catalogCategories, catalogPictures, imagePath, type CatalogCategory, type CatalogPicture, type Language } from './catalog';
 
 // Background art (site assets, Astro-hashed) — live text is typeset over these.
-export const art: Record<string, string> = { flowers: flowersImage.src, friends: friendsImage.src, islamic: islamicImage.src, birthday: birthdayImage.src, couple: coupleImage.src, night: nightImage.src, sunrise: sunriseImage.src, tea: teaImage.src, lion: lionImage.src, 'friends-sunset': friendsSunsetImage.src, cake: cakeImage.src, nilavilakku: nilavilakkuImage.src, 'mosque-dusk': mosqueDuskImage.src, 'backwaters-boat': backwatersBoatImage.src, 'tea-tumbler': teaTumblerImage.src, hibiscus: hibiscusImage.src, 'misty-forest': mistyForestImage.src, 'lake-dock': lakeDockImage.src, 'couple-hands-tea': coupleHandsTeaImage.src, 'village-night': villageNightImage.src, 'moon-palms': moonPalmsImage.src, 'hiker-dawn': hikerDawnImage.src, 'balloons-gift': balloonsGiftImage.src, cupcake: cupcakeImage.src, eagle: eagleImage.src, 'god-bless-field': godBlessFieldImage.src, 'hill-cross-dawn': hillCrossDawnImage.src, 'bible-coffee': bibleCoffeeImage.src, 'kerala-church-dawn': keralaChurchDawnImage.src, 'lantern-window': lanternWindowImage.src, 'moon-lake': moonLakeImage.src, 'moonlit-meadow': moonlitMeadowImage.src, 'paddy-night': paddyNightImage.src, 'latte-hearts': latteHeartsImage.src, 'beach-sunset-couple': beachSunsetCoupleImage.src, 'two-swings': twoSwingsImage.src, 'rain-mugs': rainMugsImage.src };
+export const art: Record<string, string> = { flowers: flowersImage.src, friends: friendsImage.src, islamic: islamicImage.src, birthday: birthdayImage.src, couple: coupleImage.src, night: nightImage.src, sunrise: sunriseImage.src, tea: teaImage.src, lion: lionImage.src, 'friends-sunset': friendsSunsetImage.src, cake: cakeImage.src, nilavilakku: nilavilakkuImage.src, 'mosque-dusk': mosqueDuskImage.src, 'backwaters-boat': backwatersBoatImage.src, 'tea-tumbler': teaTumblerImage.src, hibiscus: hibiscusImage.src, 'misty-forest': mistyForestImage.src, 'lake-dock': lakeDockImage.src, 'couple-hands-tea': coupleHandsTeaImage.src, 'village-night': villageNightImage.src, 'moon-palms': moonPalmsImage.src, 'hiker-dawn': hikerDawnImage.src, 'balloons-gift': balloonsGiftImage.src, cupcake: cupcakeImage.src, eagle: eagleImage.src, 'god-bless-field': godBlessFieldImage.src, 'hill-cross-dawn': hillCrossDawnImage.src, 'bible-coffee': bibleCoffeeImage.src, 'kerala-church-dawn': keralaChurchDawnImage.src, 'lantern-window': lanternWindowImage.src, 'moon-lake': moonLakeImage.src, 'moonlit-meadow': moonlitMeadowImage.src, 'paddy-night': paddyNightImage.src, 'latte-hearts': latteHeartsImage.src, 'beach-sunset-couple': beachSunsetCoupleImage.src, 'two-swings': twoSwingsImage.src, 'rain-mugs': rainMugsImage.src, 'three-friends-hill': threeFriendsHillImage.src, 'four-sneakers': fourSneakersImage.src, 'five-hands': fiveHandsImage.src, 'girls-beach': girlsBeachImage.src, 'friends-jump-sunset': friendsJumpSunsetImage.src, 'campfire-friends': campfireFriendsImage.src, 'two-bicycles': twoBicyclesImage.src, 'rain-umbrella-couple': rainUmbrellaCoupleImage.src, 'heart-hands-sunset': heartHandsSunsetImage.src, 'lovebirds-branch': lovebirdsBranchImage.src, 'rose-balcony-night': roseBalconyNightImage.src, 'harbour-night': harbourNightImage.src, 'kerala-courtyard-night': keralaCourtyardNightImage.src, 'mountain-lake-stars': mountainLakeStarsImage.src, 'mountain-eagle-dawn': mountainEagleDawnImage.src, 'lighthouse-dawn': lighthouseDawnImage.src, 'window-flowers-sunrise': windowFlowersSunriseImage.src, 'kerala-sunrise-paddy': keralaSunrisePaddyImage.src, 'chocolate-cake-sparklers': chocolateCakeSparklersImage.src, 'gift-confetti': giftConfettiImage.src, 'bouquet-balloons': bouquetBalloonsImage.src, 'cupcake-row': cupcakeRowImage.src, 'munnar-tea-sunrise': munnarTeaSunriseImage.src, 'jasmine-dew': jasmineDewImage.src };
 
 export type Picture = { id: string; src: string; title: string; text: string; subtitle?: string | undefined; category: string; tone: 'light' | 'dark'; placement?: 'top' | 'bottom'; variant?: number; file?: string; slug?: string; language?: Language; alt?: string; caption?: string; h1?: string; description?: string; about?: string };
 export type Category = Omit<CatalogCategory, 'art' | 'target'> & { image: string };

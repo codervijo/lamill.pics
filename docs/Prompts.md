@@ -81,3 +81,16 @@ to surface "last AI prompt" per project. Keep entries append-only.
 > God bless / Jesus loves you / Proverbs 3:5 / Malayalam church blessing;
 > good night God bless / I love you / Psalm 4:8 / Malayalam blessing; couple
 > Us. / Forever yours / swings / You are my home. Copy updated in 3 categories.
+
+## 2026-11-07 — v1.H batch 4 (24 pictures, first 24-per-run)
+
+> Operator approved 24 per run; imagemill reuse placed as v2 (shared pipeline).
+> Built `scripts/check_art.py` (band / busy / glare, calibrated on batch 3) and
+> `scripts/gen_batch.py` (one command, cost gate, `✓ ✗ ↷`). Operator: no
+> lamill-only contact sheet — review sheets are cross-site (imagemill, v2.A).
+> Batch 4: 24/24 passed the art check first time, $3.60, 0 re-rolls. Friends
+> group ×6 (one Malayalam), couple ×4, good night ×4 (Psalm 121:3), Christian ×4
+> (Isaiah 40:31, John 8:12, Malayalam Psalm 118:24), birthday ×4, Malayalam good
+> morning ×2. Malayalam lines operator-approved. Two verse line breaks and two
+> slugs (miscounted shoes / hands) fixed by re-compose, $0. Category copy for
+> the 6 touched categories rewritten as themes + counts. 67 pictures live.
