@@ -4,7 +4,7 @@
 // are passed in via the "head" slot so each page owns its own metadata.
 import '../styles/global.css';
 // GA4 — only injected when PUBLIC_GA_ID is set (Cloudflare build env var).
-const GA_ID = import.meta.env.PUBLIC_GA_ID;
+const GA_ID = (import.meta.env.PUBLIC_GA_ID || "G-FWWMK9E843");
 ---
 <!doctype html>
 <html lang="en">
