@@ -92,3 +92,14 @@ https://search.google.com/search-console directly.
 - **Action:** v1.H pilot (`2cfdd51`, live 2026-10-21): 5 new pictures (lion attitude DP, friends at sunset, strawberry cake, Malayalam nilavilakku, mosque at dusk), `/dp/attitude/` indexable with full copy + FAQ. 19 pictures, 30 sitemap-listed pages.
 - **Result:** TBD — review 2026-11-18
 - **Learning:** TBD
+
+## 2026-11-16 — Image-search impressions fell ~30% from the late-October peak (diagnosis, no action yet)
+- **Status:** active
+- **KPI:** GSC image-search impressions (10-day windows); `/dp/couple/` image impressions and position on `couple dp for whatsapp`; `/dp/islamic/islamic-dp-peace-begins-with-faith/` image impressions
+- **Baseline:** image search 3,156 impressions (2026-10-24 → 11-02) → 2,209 (11-05 → 11-14). Daily peak ~400 around 10-29, ~180 by 11-14 (GSC Performance, 3 months: 8.19K impressions, 8 clicks, pos 47.4). Sitemap fine: `sitemap-index.xml` read 2026-11-08, 79 URLs + 171 images; the losing pages are all still `Submitted and indexed` with self-canonical.
+- **Action:** none; diagnosis only. No deploys between 10-22 and 11-05, so the drops weren't caused by a site change. Three components:
+  - `/dp/english/` 500 → 0: a burst of ~100/day 10-25 → 10-30, 0 from 10-31; last crawled 10-25. Its canonical was pointed to `/dp/` on 11-07 (`9037e77`), after the drop, so that change keeps it gone but didn't cause it.
+  - `/dp/couple/` 667 → 246: couple queries ~50/day → <10/day from 11-03; position ~45 → 50–80. `couple dp for whatsapp` 177 → 1 (KD 10, the v1.I target). Batch 3's 4 couple pictures (11-06) haven't reversed it.
+  - Islamic DP queries ~150 → ~0 (`alhamdulillah dp for whatsapp`, `allah in english dp`, `islamic dp for whatsapp in english`); Pakistan 518 → 249, Sri Lanka 252 → 56.
+- **Result:** TBD — review 2026-12-14
+- **Learning:** TBD. At an average position of ~45 (page 4–5) a few places of slippage cut image impressions sharply. Why Google dropped these rankings is unknown; Google-side change or competitor pages are plausible but unverified. Watch whether v1.I's `couple dp for whatsapp` targeting recovers the couple cluster.
